@@ -57,7 +57,7 @@
                     <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
                 </div>
                 <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="#"><img src="../Assets/img/access.jpg" class="rounded-circle img-fluid border"></a>
+                    <a href="#"><img src="../Assets/img/glass.jpg" class="rounded-circle img-fluid border"></a>
                     <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
                     <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
                 </div>

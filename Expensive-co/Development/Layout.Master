@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.Master.cs" Inherits="Expensive_co.Development.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  media="screen,projection"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ExpensiveDBConnectionString %>" SelectCommand="SELECT * FROM [Users]"></asp:SqlDataSource>
+    
+    
+</head>
+<body>
+    <nav>   
+         <div class="row">
+             <div class ="col s8">
+               <a href="#" class="brand-logo">Logo</a>
+             </div>
+             <div class ="col s4">
+                  <form id="form1" class="row" runat="server">
+                       <div class="col s4">
+                           <asp:TextBox placeholder="Username" class="white" ID="TextBox1" runat="server"></asp:TextBox>
+                       </div>
+                      <div class="col s4">   
+                           <asp:TextBox placeholder="Password" class="white" ID="TextBox2" runat="server"></asp:TextBox>
+                       </div>
+                      <div class="col s4">
+                          <asp:Button class="waves-effect waves-light btn" ID="LoginBtn" runat="server" Text="Login" OnClick="LoginBtn_Click" />
+                       </div>
+                  </form>
+             </div>   
+         </div>
+    </nav>
+
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        
+</body>
+</html>

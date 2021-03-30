@@ -13,15 +13,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="../asset/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../asset/img/favicon.ico">
-    <link rel="stylesheet" href="../asset/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../asset/css/templatemo.css">   
+    <link rel="shortcut icon" type="image/x-icon" href="../Assets/img/favicon.ico">
+    <link rel="stylesheet" href="../Assets/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/Bootstrap/css/templatemo.css">   
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="../asset/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../Assets/Bootstrap/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../Assets/Ex-personal.css">
     
 </head>
 <body>
-    <!-- Top Nav -->
+    <%--<!-- Top Nav -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
@@ -40,7 +41,7 @@
             </div>
         </div>
     </nav>
-    <!-- Close Top Nav -->
+    <!-- Close Top Nav -->--%>
 
 
     <!-- Header -->
@@ -48,7 +49,8 @@
         <div class="container d-flex justify-content-between align-items-center">
 
             <a class="navbar-brand text-success logo h1 align-self-center" href="Home.aspx">
-                EXPENSIVE
+                <%--EXPENSIVE--%>
+                <img src="../Assets/img/logo.jpg" class="EX-Logo">
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,6 +96,90 @@
      <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
     </asp:ContentPlaceHolder>
     
+     <!-- Start Footer -->
+        <footer class="bg-dark" id="tempaltemo_footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 pt-5">
+                        <h2 class="h2 text-light border-bottom pb-3 border-light logo">EXPENSIVE.co</h2>
+                        <ul class="list-unstyled text-light footer-link-list">
+                            <li>
+                                <i class="fas fa-map-marker-alt fa-fw"></i>
+                                Pavilion Kuala Lumpur, No. 166, Jalan Bukit Bintang Lot 5.103.00 - 5.105.00 & P5.101.00, 55100 Kuala Lumpur, Federal Territory of Kuala Lumpur
+                            </li>
+                            <li>
+                                <i class="fa fa-phone fa-fw"></i>
+                                <a class="text-decoration-none" href="tel:018-8888-888">018-8888-888</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope fa-fw"></i>
+                                <a class="text-decoration-none" href="mailto:info@expensive.com">info@expensive.com</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 pt-5">
+                        <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+                        <ul class="list-unstyled text-light footer-link-list">
+                            <li><a class="text-decoration-none" href="#">Luxury</a></li>
+                            <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
+                            <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
+                            <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
+                            <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 pt-5">
+                        <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                        <ul class="list-unstyled text-light footer-link-list">
+                            <li><a class="text-decoration-none" href="#">Home</a></li>
+                            <li><a class="text-decoration-none" href="#">About Us</a></li>
+                            <li><a class="text-decoration-none" href="#">Products</a></li>
+                            <li><a class="text-decoration-none" href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="row text-light mb-4">
+                    <div class="col-12 mb-3">
+                        <div class="w-100 my-3 border-top border-light"></div>
+                    </div>
+                    <div class="col-auto me-auto">
+                        <ul class="list-inline text-left footer-icons">
+                            <li class="list-inline-item border border-light rounded-circle text-center">
+                                <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                            </li>
+                            <li class="list-inline-item border border-light rounded-circle text-center">
+                                <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                            </li>
+                            <li class="list-inline-item border border-light rounded-circle text-center">
+                                <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                            </li>
+                            <li class="list-inline-item border border-light rounded-circle text-center">
+                                <a class="text-light text-decoration-none" target="_blank" href="#"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                            </li>
+                        </ul>
+                    </div>               
+                </div>
+            </div>
+
+            <div class="w-100 bg-black py-3">
+                <div class="container">
+                    <div class="row pt-2">
+                        <div class="col-12">
+                            <p class="text-left text-light">
+                                Copyright &copy; 2021 EXPENSIVE.co
+                                | Designed by <a rel="sponsored" href="Home.aspx" target="_blank">EXPENSIVE.co</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!-- End Footer -->
         
 </body>
 </html>

@@ -50,7 +50,7 @@
 
             <a class="navbar-brand text-success logo h1 align-self-center" href="Home.aspx">
                 <%--EXPENSIVE--%>
-                <img src="../Assets/img/logo.jpg" class="EX-Logo">
+                <img src="../Assets/img/logo.png" class="EX-Logo">
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,13 +64,13 @@
                             <a class="nav-link" href="Home.aspx">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="About.aspx">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="Contact.aspx">Contact</a>
                         </li>
                     </ul>
                 </div>

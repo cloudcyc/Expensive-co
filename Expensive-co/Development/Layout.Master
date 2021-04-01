@@ -74,22 +74,20 @@
                         </li>
                     </ul>
                 </div>
-                <div class="navbar align-self-center d-flex">
-                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-                            <div class="input-group-text">
-                                <i class="fa fa-fw fa-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    
-                </div>
-            </div>
+                <div class="navbar align-self-center d-flex">                                 
+                    <a class="nav-icon position-relative text-decoration-none" href="Login.aspx">
+                        <i class="fa fa-fw fa-user text-dark mr-3"></i>Login                     
+                    </a>
 
-        </div>
+                    | &nbsp; &nbsp;
+
+                     <a class="nav-icon position-relative text-decoration-none" href="Register.aspx">
+                       Register                    
+                    </a>
+
+                </div>
+            </div>                 
+         </div>       
     </nav>
     <!-- Close Header -->
 

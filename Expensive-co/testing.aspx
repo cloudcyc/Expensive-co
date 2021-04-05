@@ -9,6 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" style="height: 26px" />
+
         </div>
     </form>
 </body>

@@ -3,8 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <body>
-
         <!-- Start Banner Hero -->
         <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
         
@@ -162,6 +160,5 @@
         <script src="../Assets/Bootstrap/js/templatemo.js"></script>
         <script src="../Assets/Bootstrap/js/custom.js"></script>
         <!-- End Script -->
-    </body>
 </asp:Content>
 

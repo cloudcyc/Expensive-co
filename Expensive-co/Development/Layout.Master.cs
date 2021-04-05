@@ -16,31 +16,31 @@ namespace Expensive_co.Development
         
        protected void Page_Load(object sender, EventArgs e)
         {
-           //SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
             
-           // string checkuser = "select count(*) from UserTable";
-           // SqlCommand cmd = new SqlCommand(checkuser, connect);
-            //cmd.ExecuteScalar();
-           // connect.Open();
-            //connect.Close();
+            if (Session["userEmail"] != null)
+            {
+                //Login button change to Account button which lead to dashboard for member
+                this.btn1.HRef = "";
+                this.LoginAccount_btn_Label.Text = "Account";
+
+                //Register button change to Logout button
+                this.btn2.HRef = "";
+                this.RegisterLogout_btn_Label.Text = "Logout";
 
 
+            }
+            else
+            {
+                //Login button change to Account button which lead to dashboard for member
+                this.btn1.HRef = "Login.aspx";
+                this.LoginAccount_btn_Label.Text = "Login";
 
-
-
-
+                //Register button change to Logout button
+                this.btn2.HRef = "Register.aspx";
+                this.RegisterLogout_btn_Label.Text = "Register";
+            }
+  
         }
-
-        //protected void LoginBtn_Click(object sender, EventArgs e)
-        //{
-        //    //if (this.TextBox1.Text == "admin" && this.TextBox2.Text == "123")
-        //    //{
-        //       // this.Label1.Text = this.TextBox1.Text;
-        //   // }
-        //    //else
-        //   // {
-        //    //    this.Label1.Text = "Incorrect Password";
-        //   // }
-        //}
+        
     }
 }

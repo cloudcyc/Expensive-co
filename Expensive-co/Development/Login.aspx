@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Development/Layout.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Expensive_co.Development.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Development/Layout.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Expensive_co.Development.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -16,23 +16,28 @@
     <!-- Login Form -->
     <div class="container py-5">
         <div class="row py-5">
-            <form class="col-md-9 m-auto" method="post" role="form">
+            <form id="form1" class="col-md-9 m-auto" runat="server">
                 
                 <div class="mb-3">
-                    <label for="inputsubject">Username</label>
-                    <input type="Email" class="form-control mt-1" id="Username" name="Username" placeholder="Username / Email">
+                   <label for="inputsubject">Username</label>
+                   <%--<input type="Email" class="form-control mt-1" id="Email" name="Email" placeholder="Email" runat="server">--%>
+                    <asp:TextBox class="form-control mt-1" ID="Email" runat="server" TextMode="Email"></asp:TextBox> 
                 </div>
 
                 <div class="mb-3">
                     <label for="inputsubject">Password</label>
-                    <input type="password" class="form-control mt-1" id="Password" name="Password" placeholder="Insert Your Password">
+                    <%--<input type="password" class="form-control mt-1" id="Password" name="Password" placeholder="Password">--%>
+                    <asp:TextBox class="form-control mt-1" ID="Password" runat="server" TextMode="Password"></asp:TextBox> 
                 </div>
                 
                 <div class="row">
                     <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3">Login</button>
-                    </div>
+                        <%--<button type="submit" class="btn btn-success btn-lg px-3" onclick="">Login</button>--%>
+                        <asp:Button ID="LoginBtn" class="btn btn-success btn-lg px-3" runat="server" Text="Login" OnClick="LoginBtn_Click" />
+                    </div>    
                 </div>
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                
             </form>
         </div>
     </div>

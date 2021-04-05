@@ -158,6 +158,7 @@
     <Content Include="Development\Contact.aspx" />
     <Content Include="Development\Home.aspx" />
     <Content Include="Development\Login.aspx" />
+    <Content Include="Development\LoginSuccess.aspx" />
     <Content Include="Development\Register.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -288,6 +289,13 @@
     </Compile>
     <Compile Include="Development\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\LoginSuccess.aspx.cs">
+      <DependentUpon>LoginSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\LoginSuccess.aspx.designer.cs">
+      <DependentUpon>LoginSuccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

@@ -36,7 +36,7 @@
                         <asp:Button ID="LoginBtn" class="btn btn-success btn-lg px-3" runat="server" Text="Login" OnClick="LoginBtn_Click" />
                     </div>    
                 </div>
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                
                 
             </form>
         </div>

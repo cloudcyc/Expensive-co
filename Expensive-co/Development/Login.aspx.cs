@@ -38,7 +38,7 @@ namespace Expensive_co.Development
             if (dt.Rows.Count > 0)
             {
                 Session["userEmail"] = this.Email.Text;
-                Response.Redirect("LoginSuccess.aspx");
+                Response.Redirect("Home.aspx");
                
             }
             else

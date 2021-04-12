@@ -24,10 +24,9 @@ namespace Expensive_co.Development
                 this.LoginAccount_btn_Label.Text = "Account";
 
                 //Register button change to Logout button
-                this.btn2.HRef = "";
+                this.btn2.HRef = "Logout.aspx";
                 this.RegisterLogout_btn_Label.Text = "Logout";
-
-
+                
             }
             else
             {

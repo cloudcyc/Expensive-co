@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Development/Layout.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Expensive_co.Development.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Development/Layout.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Expensive_co.Development.Register" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -13,50 +13,75 @@
         </div>
     </div>
 
-    <!-- Login Form -->
+    <!-- Register Form -->
     <div class="container py-5">
         <div class="row py-5">
-            <form class="col-md-9 m-auto" method="post" role="form">
+            <form class="col-md-9 m-auto" method="post" role="form" runat="server">
 
                 <div class="row">
                     <div class="form-group col-md-6 mb-3">
                         <label for="inputname">First Name</label>
-                        <input type="text" class="form-control mt-1" id="First" name="First" placeholder="First Name">
+                        
+                        <asp:TextBox ID="FirstName" runat="server" class="form-control mt-1" name="First" placeholder="First Name"></asp:TextBox>       
                     </div>
                     <div class="form-group col-md-6 mb-3">
                         <label for="inputemail">Last Name</label>
-                        <input type="text" class="form-control mt-1" id="Last" name="Last" placeholder="Last Name">
+                        
+                        <asp:TextBox ID="LastName" runat="server" class="form-control mt-1" name="Last" placeholder="Last Name"></asp:TextBox>
                     </div>
                 </div>
                 
                 <div class="mb-3">
                     <label for="inputsubject">Email</label>
-                    <input type="email" class="form-control mt-1" id="Username" name="Username" placeholder="Username / Email">
+                    
+                    <asp:TextBox ID="Email" runat="server" placeholder="Email" TextMode="Email" class="form-control mt-1"></asp:TextBox>
                 </div>
 
                 <div class="mb-3">
                     <label for="inputsubject">Phone Number</label>
-                    <input type="tel" class="form-control mt-1" id="Phone" name="Phone" placeholder="Phone Number">
+                    
+                    <asp:TextBox ID="Phone" runat="server" name="Phone" placeholder="Phone Number" TextMode="Phone" class="form-control mt-1"></asp:TextBox>
                 </div>
 
                 <div class="mb-3">
                     <label for="inputsubject">Date of Birth</label>
-                    <input type="date" class="form-control mt-1" id="DOB" name="DOB" placeholder="Select Date">
+                   
+                    <asp:TextBox ID="DOB" runat="server" name="DOB" placeholder="Select Date" TextMode="Date" class="form-control mt-1"></asp:TextBox>
+                </div>
+
+                 <div class="mb-3">
+                    <label for="inputsubject">Address</label>
+                    <asp:TextBox ID="Address" runat="server" name="Address" placeholder="Address" TextMode="MultiLine" class="form-control mt-1"></asp:TextBox>
                 </div>
 
                 <div class="mb-3">
                     <label for="inputsubject">Password</label>
-                    <input type="password" class="form-control mt-1" id="Password" name="Password" placeholder="Insert Your Password">
+                    
+                    <asp:TextBox ID="Password" runat="server" name="Password" placeholder="Insert Your Password" TextMode="Password" class="form-control mt-1"></asp:TextBox>
+                    <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="At least 1 Upper and 1 Lower case, 1 Number, and 1 Special Character">Password Requirements</i>
+                    
                 </div>
-                
+
+                <div class="mb-3">
+                    <label for="inputsubject">Confirm Password</label>
+                    <asp:TextBox ID="ConfirmPassword" runat="server" name="Password" placeholder="Confirm Password" TextMode="Password" class="form-control mt-1"></asp:TextBox>
+                </div>
+
                 <div class="row">
+                    <%--this is the invalid warning--%>
+                    <div class="col mt-2 ">
+                        <asp:Panel ID="InvalidPanel" visible="false" class="alert alert-danger" runat="server">
+                            <asp:Label ID="InvalidError" class="" runat="server" Text="asd"></asp:Label>
+                        </asp:Panel>
+                        
+                    </div>
                     <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3">Create an account</button>
+                        <asp:Button ID="RegisterBtn" class="btn btn-success btn-lg px-3" runat="server" Text="Create an Account" OnClick="RegisterBtn_Click" />
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <!-- Login Form -->
+    <!-- Register Form -->
 
 </asp:Content>

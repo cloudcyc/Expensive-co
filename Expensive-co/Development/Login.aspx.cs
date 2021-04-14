@@ -43,7 +43,7 @@ namespace Expensive_co.Development
             }
             else
             {
-                this.Label1.Text = "Incorrect Email or Password";
+                //incorrect
             }
         }
 

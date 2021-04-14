@@ -31,7 +31,6 @@ namespace Expensive_co.Development
 
             if (Validation == true)
             {
-                
                 registerQuery.Parameters.AddWithValue("@userFullName", this.FirstName.Text + " " + this.LastName.Text);
                 registerQuery.Parameters.AddWithValue("@userEmail", this.Email.Text);
                 registerQuery.Parameters.AddWithValue("@userContact", this.Phone.Text);
@@ -65,16 +64,30 @@ namespace Expensive_co.Development
                 if (FirstName != null && checkEmail.IsMatch(Email) && checkNum.IsMatch(PhoneNumber) && checkStrongPassword.IsMatch(Password) && checkStrongPassword.IsMatch(ConfirmPassword) && DOB !=null)
                 {
                     SqlCommand checkRegisteredEmail = new SqlCommand("select * from Users where userEmail=@userEmail", connect);
-                    checkRegisteredEmail.Parameters.AddWithValue("@userEmail", this.Email.Text);
-                    SqlDataAdapter adapter = new SqlDataAdapter(checkRegisteredEmail);
-                    DataTable checking = new DataTable();
-                    adapter.Fill(checking);
+                    checkRegisteredEmail.Parameters.AddWithValue("@userEmail", Email);
+
+                    SqlCommand checkRegisteredPhone = new SqlCommand("select * from Users where userContact=@userPhone", connect);
+                    checkRegisteredPhone.Parameters.AddWithValue("@userPhone", PhoneNumber);
+                    SqlDataAdapter adapterEmail = new SqlDataAdapter(checkRegisteredEmail);
+                    DataTable checkingEmail = new DataTable();
+
+                    SqlDataAdapter adapterPhone = new SqlDataAdapter(checkRegisteredPhone);
+                    DataTable checkingPhone = new DataTable();
+
+                    adapterEmail.Fill(checkingEmail);
+                    adapterPhone.Fill(checkingEmail);
                     connect.Open();
-                    int i = checkRegisteredEmail.ExecuteNonQuery();
+                    int existEmail = checkRegisteredEmail.ExecuteNonQuery();
+                    int existPhone = checkRegisteredPhone.ExecuteNonQuery();
                     connect.Close();
-                    if (checking.Rows.Count > 0)
+                    if (checkingEmail.Rows.Count > 0)
                     {
                         this.InvalidError.Text = "Email already Exist";
+                        return false;
+                    }
+                    else if (checkingPhone.Rows.Count > 0)
+                    {
+                        this.InvalidError.Text = "Phone Number already Exist";
                         return false;
                     }
                     else

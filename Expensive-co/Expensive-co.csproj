@@ -161,6 +161,7 @@
     <Content Include="Development\LoginSuccess.aspx" />
     <Content Include="Development\Logout.aspx" />
     <Content Include="Development\Register.aspx" />
+    <Content Include="Development\Shops.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -311,6 +312,13 @@
     </Compile>
     <Compile Include="Development\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Shops.aspx.cs">
+      <DependentUpon>Shops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\Shops.aspx.designer.cs">
+      <DependentUpon>Shops.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

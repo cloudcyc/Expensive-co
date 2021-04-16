@@ -9,18 +9,10 @@
 
     <form id="form1" runat="server">
             <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <div class="card-body">
-
-            <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
-
-                                    </div>
-                                </div>
-                             </div>
-                        </div>
-                    </div>
+   
+                <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+       
+            </div>
 
     </form>
     <br />

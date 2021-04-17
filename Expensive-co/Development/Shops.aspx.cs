@@ -23,22 +23,19 @@ namespace Expensive_co.Development
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    html.Append("<div class='col-md-4'>");
-                        html.Append("<div class='card mb-4 product-wap rounded-0'>");
-                            html.Append("<class='card rounded-0'>");
-                                html.Append("<div class='card-body'>");
-                                    html.Append("<h3>" + row["productName"] + "</h3>");
-                                    html.Append(row["productDescription"] + "<br>");
-                                    html.Append(row["productPrice"]);
-                                html.Append("</div>");
-                            html.Append("</div>");
-                        html.Append("</div>");
+                   
+                    html.Append("<div class=\"col-md-4\">");
+
+                                     html.Append("<h3>" + row["productName"] + "</h3>" + "<br>");
+                                     html.Append(row["productDescription"] + "<br>");
+                                     html.Append(row["productPrice"] + "<br>");
+
                     html.Append("</div>");
 
 
                 }
 
-                PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
+                PlaceHolder2.Controls.Add(new Literal { Text = html.ToString() });
             }
         }
         private DataTable GetData()

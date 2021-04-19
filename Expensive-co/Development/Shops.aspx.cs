@@ -24,11 +24,11 @@ namespace Expensive_co.Development
                 foreach (DataRow row in dt.Rows)
                 {
                    
-                    html.Append("<div class=\"col-md-4\">");
+                    html.Append("<div class=\"col-md-6 col-lg-3 pb-5\">");
+                    html.Append("<img class=\"card-img rounded-0\" src=\"../Assets/img/lv.jpg\">");
 
-                                     html.Append("<h3>" + row["productName"] + "</h3>" + "<br>");
-                                     html.Append(row["productDescription"] + "<br>");
-                                     html.Append(row["productPrice"] + "<br>");
+                                     html.Append("<h3>" + row["productName"] + "</h3>");
+                                     html.Append("RM" + row["productPrice"] + "<br>");
 
                     html.Append("</div>");
 

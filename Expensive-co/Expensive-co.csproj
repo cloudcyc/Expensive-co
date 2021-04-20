@@ -126,6 +126,7 @@
     <Content Include="Assets\Bootstrap\css\bootstrap.min.css" />
     <Content Include="Assets\Bootstrap\css\bootstrap.rtl.css" />
     <Content Include="Assets\Bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Assets\Bootstrap\css\Button.css" />
     <Content Include="Assets\Bootstrap\css\fa-brands.css" />
     <Content Include="Assets\Bootstrap\css\fa-brands.min.css" />
     <Content Include="Assets\Bootstrap\css\fa-regular.css" />
@@ -299,6 +300,7 @@
     <Content Include="Development\Login.aspx" />
     <Content Include="Development\LoginSuccess.aspx" />
     <Content Include="Development\Logout.aspx" />
+    <Content Include="Development\ProductList.aspx" />
     <Content Include="Development\Register.aspx" />
     <Content Include="Development\Shops.aspx" />
     <Content Include="favicon.ico" />
@@ -377,7 +379,6 @@
     <Content Include="Assets\Bootstrap\css\bootstrap-utilities.rtl.css.map" />
     <Content Include="Assets\Bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
     <Content Include="Assets\Bootstrap\css\bootstrap.css.map" />
-    <Content Include="Assets\Bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Assets\Bootstrap\css\bootstrap.rtl.css.map" />
     <Content Include="Assets\Bootstrap\css\bootstrap.rtl.min.css.map" />
     <Content Include="Assets\Bootstrap\js\bootstrap.bundle.js.map" />
@@ -692,6 +693,13 @@
     </Compile>
     <Compile Include="Development\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

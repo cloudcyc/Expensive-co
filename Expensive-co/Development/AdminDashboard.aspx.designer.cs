@@ -11,16 +11,25 @@ namespace Expensive_co.Development
 {
 
 
-    public partial class AdminHome
+    public partial class AdminDashboard
     {
 
         /// <summary>
-        /// Label1 control.
+        /// TotalMemberCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label TotalMemberCount;
+
+        /// <summary>
+        /// TotalProductCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TotalProductCount;
     }
 }

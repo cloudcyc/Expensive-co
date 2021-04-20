@@ -293,7 +293,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Development\About.aspx" />
-    <Content Include="Development\AdminHome.aspx" />
+    <Content Include="Development\AdminDashboard.aspx" />
     <Content Include="Development\Contact.aspx" />
     <Content Include="Development\Home.aspx" />
     <Content Include="Development\Login.aspx" />
@@ -565,6 +565,7 @@
     <Content Include="Assets\Bootstrap\scss\widgets\profile.scss" />
     <Content Include="Assets\Bootstrap\scss\widgets\steamline.scss" />
     <Content Include="Assets\Bootstrap\scss\widgets\widgets.scss" />
+    <Content Include="Development\LayoutAdmin.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Assets\materialize\css\materialize.css" />
     <Content Include="Assets\materialize\css\materialize.min.css" />
@@ -636,12 +637,12 @@
     <Compile Include="Development\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Development\AdminHome.aspx.cs">
-      <DependentUpon>AdminHome.aspx</DependentUpon>
+    <Compile Include="Development\AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Development\AdminHome.aspx.designer.cs">
-      <DependentUpon>AdminHome.aspx</DependentUpon>
+    <Compile Include="Development\AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -663,6 +664,13 @@
     </Compile>
     <Compile Include="Development\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\LayoutAdmin.Master.cs">
+      <DependentUpon>LayoutAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\LayoutAdmin.Master.designer.cs">
+      <DependentUpon>LayoutAdmin.Master</DependentUpon>
     </Compile>
     <Compile Include="Development\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

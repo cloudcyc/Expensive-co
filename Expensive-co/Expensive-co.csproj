@@ -155,11 +155,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Development\About.aspx" />
+    <Content Include="Development\AdminDashboard.aspx" />
     <Content Include="Development\Contact.aspx" />
     <Content Include="Development\Home.aspx" />
     <Content Include="Development\Login.aspx" />
     <Content Include="Development\LoginSuccess.aspx" />
     <Content Include="Development\Logout.aspx" />
+    <Content Include="Development\ProductList.aspx" />
     <Content Include="Development\Product_information.aspx" />
     <Content Include="Development\Register.aspx" />
     <Content Include="Development\Shops.aspx" />
@@ -194,6 +196,8 @@
     <Content Include="Assets\Bootstrap\webfonts\slick.eot" />
     <Content Include="Assets\Bootstrap\webfonts\slick.ttf" />
     <Content Include="Assets\Bootstrap\webfonts\slick.woff" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="Development\LayoutAdmin.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Assets\materialize\css\materialize.css" />
     <Content Include="Assets\materialize\css\materialize.min.css" />
@@ -265,6 +269,13 @@
     <Compile Include="Development\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Development\AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Development\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -286,6 +297,13 @@
     <Compile Include="Development\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Development\LayoutAdmin.Master.cs">
+      <DependentUpon>LayoutAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\LayoutAdmin.Master.designer.cs">
+      <DependentUpon>LayoutAdmin.Master</DependentUpon>
+    </Compile>
     <Compile Include="Development\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -306,6 +324,13 @@
     </Compile>
     <Compile Include="Development\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\Product_information.aspx.cs">
       <DependentUpon>Product_information.aspx</DependentUpon>

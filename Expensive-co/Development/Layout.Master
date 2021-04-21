@@ -11,12 +11,6 @@
    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
-    <meta name="description"
-        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">
-
 
     <link rel="apple-touch-icon" href="../asset/img/apple-icon.png">
     <link rel="shortcut icon" type="image/x-icon" href="../Assets/img/favicon.ico">
@@ -25,12 +19,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="../Assets/Bootstrap/css/fontawesome.min.css">
     <link rel="stylesheet" href="../Assets/Ex-personal.css">
-    <link rel="stylesheet" href="../Assets/Bootstrap/css/style.min.css">
-    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/">
-    <link rel="stylesheet" href="../Assets/Bootstrap/css/chartist.min.css">
-    <link rel="stylesheet" href="../Assets/Bootstrap/css/chartist-plugin-tooltip.css">
-
-
     
 </head>
 <body>

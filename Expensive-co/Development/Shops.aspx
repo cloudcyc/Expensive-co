@@ -8,16 +8,13 @@
     
 
     <form id="form1" runat="server">
-    <section class="container py-5">
-        <div class="row">
-             
+        <div class ="row">
             
    
             <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
        
-            
+
         </div>
-    </section>
     </form>
     <br />
 

@@ -75,7 +75,7 @@ namespace Expensive_co.Development
                     DataTable checkingPhone = new DataTable();
 
                     adapterEmail.Fill(checkingEmail);
-                    adapterPhone.Fill(checkingPhone);
+                    adapterPhone.Fill(checkingEmail);
                     connect.Open();
                     int existEmail = checkRegisteredEmail.ExecuteNonQuery();
                     int existPhone = checkRegisteredPhone.ExecuteNonQuery();

@@ -160,6 +160,7 @@
     <Content Include="Development\Login.aspx" />
     <Content Include="Development\LoginSuccess.aspx" />
     <Content Include="Development\Logout.aspx" />
+    <Content Include="Development\Product_information.aspx" />
     <Content Include="Development\Register.aspx" />
     <Content Include="Development\Shops.aspx" />
     <Content Include="favicon.ico" />
@@ -305,6 +306,13 @@
     </Compile>
     <Compile Include="Development\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Product_information.aspx.cs">
+      <DependentUpon>Product_information.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\Product_information.aspx.designer.cs">
+      <DependentUpon>Product_information.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

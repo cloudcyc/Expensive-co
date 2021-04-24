@@ -34,6 +34,7 @@ namespace Expensive_co.Development
                     html.Append("<div class=\"text-center  py-3\">");
                     html.Append("<a class=\"btn btn-success text-white\">Edit</a>");
                     html.Append("<a class=\"btn btn-danger text-white\">Delete</a>");
+                    html.Append("<a class=\"btn btn-success text-white\"><i class=\"far fa-eye\"></i></a>");
                     html.Append("</div>");
 
                     html.Append("</div>");

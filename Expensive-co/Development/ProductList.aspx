@@ -8,23 +8,34 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Product List</h4>                                 
+                        <h4 class="page-title">Product List</h4> 
+                                                
                     </div>
 
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
                             <ol class="breadcrumb ms-auto"></ol>
-                            <a class="btn btn-success text-white">Add New Products</a>
+                            <a class="btn btn-success text-white" href="AddProduct.aspx">Add New Products</a>
                         </div>
                     </div>
                     
                 </div>
             </div>
         
+        
 
     <form id="form1" runat="server">
-    <section class="container py-5">
-        
+    <section class="container py-5">    
+        <div class="col-md-6 m-auto text-center">
+            <div class="input-group">
+                <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                <div class="input-group-text">
+                    <i class="fa fa-fw fa-search"></i>
+                </div>
+            </div>
+
+        </div>
+        <br />
         <div class="row">
 
             <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>

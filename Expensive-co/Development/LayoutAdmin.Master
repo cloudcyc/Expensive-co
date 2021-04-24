@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="../Assets/Bootstrap/css/chartist-plugin-tooltip.css">
     <link rel="stylesheet" href="../Assets/Bootstrap/css/Button.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../Assets/Bootstrap/Ex-personal.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -55,7 +56,7 @@
 
                         <!-- User profile-->
                         <li>
-                            <Label Class="text-white">Welcome back,</Label> <asp:Label Class="text-white" ID="AdminName" runat="server" Text="Label"></asp:Label>
+                            <Label Class="text-white">Welcome back,</Label> <asp:Label Class="text-white" ID="AdminName" runat="server" Text="Label"></asp:Label> &nbsp; &nbsp;
                         </li>
                     </ul>
 
@@ -143,11 +144,11 @@
 
     <!--Java Script-->
 
-    <script src="../Assets/Bootstrap/js/jquery.min.js"></script>
+    <script src="../Assets/Bootstrap/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../Assets/Bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../Assets/Bootstrap/js/app-style-switcher.js"></script>
-    <script src="../Assets/Bootstrap/js/jquery.sparkline.min.js"></script>
+    <script src="../Assets/Bootstrap/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!--Wave Effects -->
     <script src="../Assets/Bootstrap/js/waves.js"></script>
     <!--Menu sidebar -->
@@ -156,8 +157,8 @@
     <script src="../Assets/Bootstrap/js/custom.js"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
-    <script src="../Assets/Bootstrap/js/chartist.min.js"></script>
-    <script src="../Assets/Bootstrap/js/chartist-plugin-tooltip.min.js"></script>
+    <script src="../Assets/Bootstrap/plugins/bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="../Assets/Bootstrap/plugins/bower_components/chartist/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="../Assets/Bootstrap/js/dashboard1.js"></script>
     
         

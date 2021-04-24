@@ -29,7 +29,7 @@
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/">
     <link rel="stylesheet" href="../Assets/Bootstrap/css/chartist.min.css">
     <link rel="stylesheet" href="../Assets/Bootstrap/css/chartist-plugin-tooltip.css">
-
+    <script src="../Assets/Bootstrap/Ex-personal.js"></script>
 
     
 </head>

@@ -13,7 +13,7 @@
                             <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
                                 <img class="img-fluid" src="../Assets/img/lv.jpg" alt="">
                             </div>
-                            <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="col-lg-6 mb-7 d-flex align-items-center">
                                 <div class="text-align-left align-self-center">
                                     <h1 class="h1"><b>EXPENSIVE</b> .co</h1>
                                     <h3 class="h2">Buy Your Wearable Here</h3>

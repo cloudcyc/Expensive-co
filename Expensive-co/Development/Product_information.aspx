@@ -2,50 +2,74 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
-  <div class="row">
-    <div class="col-4">
-     <div class="container">
-         <h2> New Arrivals</h2>
-         <div class="row">
-         <div class="col-md-3">
-         <div class="product-top">
-             <img src="shoes.jpg" alt="Alternate Text" />
-            <div class="overlay">
-            <button type="button" class="btn btn secondary" 
-                title="Quick shop"><i class="fa fa-eye"></i></button>
-                <button type="button" class="btn btn secondary" 
-                title="Add to Wishlist"><i class="fas fa-heart"></i></button>
-                <button type="button" class="btn btn secondary" 
-                title="Add to cart"><i class="fa fa-shopping-cart"></i></button>
+       <!-- Open Content -->
+    <section class="bg-light">
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-lg-5 mt-5">
+                    <div class="card mb-3">
+                        <img class="card-img img-fluid" src="../Assets/img/lv.jpg" alt="Card image cap" id="product-detail">
+                    </div>
+                </div>
+                <!-- col end -->
+                <div class="col-lg-7 mt-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="h2">LV Casual White Shoe</h1>
+                            <p class="h3 py-2">RM8888888</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <h6>Brand:</h6>
+                                </li>
+                                <li class="list-inline-item">
+                                    <p class="text-muted"><strong>LV</strong></p>
+                                </li>
+                            </ul>
 
-            </div>
+                            <h6>Description:</h6>
+                            <p>blablabla</p>
+                            
 
-            </div>
-             <div class="product-color-dot-bottom text-center">
-                 <i class="fa fa-star"></i>
-                 <i class="fa fa-star"></i>
-                 <i class="fa fa-star"></i>
-                 <i class="fa fa-star-half-o"></i>
-                 <i class="fa fa-star-o"></i>
-                    <h3>Fitness Shoes</h3>
-                 <h5>$499.00</h5>
-                 
-                 
-             </div>
-            </div>
-         </div>
-     </div>
-    </div>
-    <div class="col-8">
-     <h5>Discription</h5>
-        <h5>Lather Shoes</h5>
-        <div class="Discription">
-            <p>the shoes are made up of original lather. we are giving two years warrenty of shoes.
-                the waranty can be claimed on nike store. delivery time (5 working days)</p>
+                            
+                            <form action="" method="GET">
+                                <input type="hidden" name="product-title" value="Activewear">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <ul class="list-inline pb-3">
+                                            <li class="list-inline-item">Size :
+                                                <input type="hidden" name="product-size" id="product-size" value="S">
+                                            </li>
+                                            <li class="list-inline-item"><span class="btn btn-success btn-size">42</span></li>
+                                            <li class="list-inline-item"><span class="btn btn-success btn-size">43</span></li>
+                                            <li class="list-inline-item"><span class="btn btn-success btn-size">44</span></li>
+                                            <li class="list-inline-item"><span class="btn btn-success btn-size">45</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-auto">
+                                        <ul class="list-inline pb-3">
+                                            <li class="list-inline-item text-right">
+                                                Quantity
+                                                <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                                            </li>
+                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
+                                            <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row pb-3">
+                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                                    <div class="col d-grid">                                        
+                                    </div>
+                                </div>
+                            </form>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-  </div>
-</div>
+    </section>
+    <!-- Close Content -->
+
 </asp:Content>

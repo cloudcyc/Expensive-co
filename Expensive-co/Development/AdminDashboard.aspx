@@ -18,7 +18,7 @@
                         <div class="white-box analytics-info">
                             <h3 class="box-title">Total Sales</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">                                
-                                <li class="ms-auto"><span class="counter text-success">RM 1,000,000</span></li>
+                                <li class="ms-auto"><span class="counter text-success"><b>RM 1,000,000</b></span></li>
                             </ul>
                         </div>
                     </div>
@@ -31,9 +31,11 @@
                                             style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                     </div>
                                 </li>
+                                
                                 <li class="ms-auto">
-                                    <asp:Label ID="TotalMemberCount" runat="server" Text="Label" class="counter text-purple"></asp:Label>  
+                                    <asp:Label ID="TotalMemberCount" runat="server" Text="Label" class="counter text-purple fw-bold"></asp:Label>  
                                 </li>
+
                             </ul>
                         </div>
                     </div>
@@ -47,7 +49,7 @@
                                     </div>
                                 </li>
                                 <li class="ms-auto">
-                                    <asp:Label ID="TotalProductCount" runat="server" Text="Label" class="counter text-purple"></asp:Label>                                   
+                                    <asp:Label ID="TotalProductCount" runat="server" Text="Label" class="counter text-purple fw-bold"></asp:Label>                                   
                                 </li>
                             </ul>
                         </div>

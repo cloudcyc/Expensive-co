@@ -118,6 +118,7 @@
     <Content Include="Assets\Bootstrap\css\slick.min.css" />
     <Content Include="Assets\Bootstrap\css\templatemo.css" />
     <Content Include="Assets\Bootstrap\css\templatemo.min.css" />
+    <Content Include="Assets\Bootstrap\Ex-personal.js" />
     <Content Include="Assets\Bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Assets\Bootstrap\js\custom.js" />
     <Content Include="Assets\Bootstrap\js\jquery-1.11.0.min.js" />
@@ -155,6 +156,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Development\About.aspx" />
+    <Content Include="Development\AddProduct.aspx" />
     <Content Include="Development\AdminDashboard.aspx" />
     <Content Include="Development\Contact.aspx" />
     <Content Include="Development\Home.aspx" />
@@ -268,6 +270,13 @@
     </Compile>
     <Compile Include="Development\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\AdminDashboard.aspx.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>

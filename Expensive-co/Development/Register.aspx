@@ -57,15 +57,9 @@
                 <div class="mb-3">
                     <label for="inputsubject">Password</label>
                     
-                    <asp:TextBox ID="Password" runat="server" name="Password" placeholder="Insert Your Password" TextMode="Password" class="form-control mt-1"></asp:TextBox>
-                    <div id="message">
-                      <h3>Password must contain the following:</h3>
-                      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                      <p id="number" class="invalid">A <b>number</b></p>
-                      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-                    </div>
-                    
+                    <asp:TextBox ID="Password" runat="server" name="Password" placeholder="Insert Your Password" TextMode="Password" class="form-control mt-1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"></asp:TextBox>
+                    <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="At least 1 Upper and 1 Lower case, 1 Number, and 1 Special Character">Password Requirements</i>
+
                 </div>
 
                 <div class="mb-3">

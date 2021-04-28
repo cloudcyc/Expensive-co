@@ -162,6 +162,7 @@
     <Content Include="Development\ChangeProductStatus.aspx" />
     <Content Include="Development\Contact.aspx" />
     <Content Include="Development\DeleteProduct.aspx" />
+    <Content Include="Development\EditProduct.aspx" />
     <Content Include="Development\Home.aspx" />
     <Content Include="Development\Login.aspx" />
     <Content Include="Development\LoginSuccess.aspx" />
@@ -316,6 +317,13 @@
     </Compile>
     <Compile Include="Development\DeleteProduct.aspx.designer.cs">
       <DependentUpon>DeleteProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\Layout.Master.cs">
       <DependentUpon>Layout.Master</DependentUpon>

@@ -158,6 +158,7 @@
     <Content Include="Development\About.aspx" />
     <Content Include="Development\AddProduct.aspx" />
     <Content Include="Development\AdminDashboard.aspx" />
+    <Content Include="Development\AdminEditProfile.aspx" />
     <Content Include="Development\ChangeProductStatus.aspx" />
     <Content Include="Development\Contact.aspx" />
     <Content Include="Development\DeleteProduct.aspx" />
@@ -286,6 +287,13 @@
     </Compile>
     <Compile Include="Development\AdminDashboard.aspx.designer.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\AdminEditProfile.aspx.cs">
+      <DependentUpon>AdminEditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\AdminEditProfile.aspx.designer.cs">
+      <DependentUpon>AdminEditProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\ChangeProductStatus.aspx.cs">
       <DependentUpon>ChangeProductStatus.aspx</DependentUpon>

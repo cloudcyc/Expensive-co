@@ -158,7 +158,9 @@
     <Content Include="Development\About.aspx" />
     <Content Include="Development\AddProduct.aspx" />
     <Content Include="Development\AdminDashboard.aspx" />
+    <Content Include="Development\ChangeProductStatus.aspx" />
     <Content Include="Development\Contact.aspx" />
+    <Content Include="Development\DeleteProduct.aspx" />
     <Content Include="Development\Home.aspx" />
     <Content Include="Development\Login.aspx" />
     <Content Include="Development\LoginSuccess.aspx" />
@@ -285,12 +287,26 @@
     <Compile Include="Development\AdminDashboard.aspx.designer.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Development\ChangeProductStatus.aspx.cs">
+      <DependentUpon>ChangeProductStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\ChangeProductStatus.aspx.designer.cs">
+      <DependentUpon>ChangeProductStatus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Development\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Development\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\DeleteProduct.aspx.cs">
+      <DependentUpon>DeleteProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\DeleteProduct.aspx.designer.cs">
+      <DependentUpon>DeleteProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\Layout.Master.cs">
       <DependentUpon>Layout.Master</DependentUpon>
@@ -395,7 +411,9 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Assets\productImg\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />

@@ -22,10 +22,18 @@ namespace Expensive_co.Development
 
                 foreach (DataRow row in dt.Rows)
                 {
-
+                    
                     html.Append("<div class=\"col-md-6 col-lg-3 pb-5\">");
                     html.Append("<div class=\"card mb-4 product-wap rounded-0\">");
-                    html.Append("<img class=\"card-img rounded-0\" src=\"../Assets/img/lv.jpg\">");
+
+                    if (row["productImage"].ToString() == "") {
+                        html.Append("<img class=\"card-img rounded-0\" src=\"../Assets/img/NoProductImage.png\">");
+                    }
+                    else
+                    {
+                        html.Append("<img class=\"card-img rounded-0\" src =\"../Assets/productImg/" + row["productImage"] + "\" >");
+                    }
+                   
                     html.Append("<div class=\"card-body\">");
 
                     html.Append("<h3>" + row["productName"] + "</h3>");
@@ -33,8 +41,17 @@ namespace Expensive_co.Development
 
                     html.Append("<div class=\"text-center  py-3\">");
                     html.Append("<a class=\"btn btn-success text-white\">Edit</a>");
-                    html.Append("<a class=\"btn btn-danger text-white\">Delete</a>");
-                    html.Append("<a class=\"btn btn-success text-white\"><i class=\"far fa-eye\"></i></a>");
+                    html.Append("<a class=\"btn btn-danger text-white\" href=\"DeleteProduct.aspx?productID=" + row["productID"] + "\">Delete</a>");
+                    if (row["productStatus"].ToString() == "1")
+                    {
+                        html.Append("<a class=\"btn btn-success text-white\" href=\"ChangeProductStatus.aspx?productStatus=" + row["productStatus"]+ "&productID=" + row["productID"] + "\"><i class=\"far fa-eye\"></i></a>");
+                    }
+                    else
+                    {
+                        html.Append("<a class=\"btn btn-warning text-white\" href=\"ChangeProductStatus.aspx?productStatus=" + row["productStatus"] + "&productID=" + row["productID"] + "\"><i class=\"far fa-eye-slash\"></i></a>");
+                    }
+
+                        
                     html.Append("</div>");
 
                     html.Append("</div>");

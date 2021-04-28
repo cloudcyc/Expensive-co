@@ -24,6 +24,15 @@ namespace Expensive_co.Development
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// productname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox productname;
+
+        /// <summary>
         /// productprice control.
         /// </summary>
         /// <remarks>
@@ -39,7 +48,7 @@ namespace Expensive_co.Development
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productbrand;
+        protected global::System.Web.UI.WebControls.DropDownList productbrand;
 
         /// <summary>
         /// productimage control.
@@ -57,7 +66,16 @@ namespace Expensive_co.Development
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productcategories;
+        protected global::System.Web.UI.WebControls.DropDownList productcategories;
+
+        /// <summary>
+        /// productdescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox productdescription;
 
         /// <summary>
         /// InvalidPanel control.
@@ -76,5 +94,14 @@ namespace Expensive_co.Development
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label InvalidError;
+
+        /// <summary>
+        /// AddProductBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddProductBtn;
     }
 }

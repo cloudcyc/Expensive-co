@@ -41,7 +41,7 @@ namespace Expensive_co.Development
 
                 connect.Open();
                 int result = registerQuery.ExecuteNonQuery();
-
+                connect.Close();
                 if (result < 0)
                 {
                     Console.WriteLine("Error inserting data into Database!");

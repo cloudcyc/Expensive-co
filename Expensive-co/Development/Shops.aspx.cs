@@ -26,7 +26,14 @@ namespace Expensive_co.Development
                    
                     html.Append("<div class=\"col-md-6 col-lg-3 pb-5\">");
                     html.Append("<div class=\"card mb-4 product-wap rounded-0\">");
-                    html.Append("<img class=\"card-img rounded-0\" src=\"../Assets/img/lv.jpg\">");
+                    if (row["productImage"].ToString() == "")
+                    {
+                        html.Append("<img class=\"card-img rounded-0\" src=\"../Assets/img/NoProductImage.png\">");
+                    }
+                    else
+                    {
+                        html.Append("<img class=\"card-img rounded-0\" src =\"../Assets/productImg/" + row["productImage"] + "\" >");
+                    }
                     html.Append("<div class=\"card-body\">");
 
                                      html.Append("<h3>" + row["productName"] + "</h3>");
@@ -45,7 +52,7 @@ namespace Expensive_co.Development
         private DataTable GetData()
         {
             SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Products", connect);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Products WHERE productStatus=1", connect);
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {

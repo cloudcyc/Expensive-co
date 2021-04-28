@@ -159,6 +159,7 @@
     <Content Include="Development\AddProduct.aspx" />
     <Content Include="Development\AdminDashboard.aspx" />
     <Content Include="Development\AdminEditProfile.aspx" />
+    <Content Include="Development\AdminManageUser.aspx" />
     <Content Include="Development\ChangeProductStatus.aspx" />
     <Content Include="Development\Contact.aspx" />
     <Content Include="Development\DeleteProduct.aspx" />
@@ -167,7 +168,6 @@
     <Content Include="Development\Login.aspx" />
     <Content Include="Development\LoginSuccess.aspx" />
     <Content Include="Development\Logout.aspx" />
-    <Content Include="Development\ManageUsers.aspx" />
     <Content Include="Development\ProductList.aspx" />
     <Content Include="Development\Product_information.aspx" />
     <Content Include="Development\Register.aspx" />
@@ -297,6 +297,13 @@
     <Compile Include="Development\AdminEditProfile.aspx.designer.cs">
       <DependentUpon>AdminEditProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Development\AdminManageUser.aspx.cs">
+      <DependentUpon>AdminManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\AdminManageUser.aspx.designer.cs">
+      <DependentUpon>AdminManageUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Development\ChangeProductStatus.aspx.cs">
       <DependentUpon>ChangeProductStatus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -366,13 +373,6 @@
     </Compile>
     <Compile Include="Development\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Development\ManageUsers.aspx.cs">
-      <DependentUpon>ManageUsers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Development\ManageUsers.aspx.designer.cs">
-      <DependentUpon>ManageUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\ProductList.aspx.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>

@@ -86,7 +86,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="ManageUsers.aspx"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="AdminManageUser.aspx"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Manage User Account</span>

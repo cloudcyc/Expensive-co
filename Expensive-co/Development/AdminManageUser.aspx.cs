@@ -25,9 +25,9 @@ namespace Expensive_co.Development
                 html.Append("<div class=\"card-body\">");
 
                 html.Append("<h3>" + row["userFullName"] + "</h3>");
-                html.Append("RM" + row["userEmail"] + "<br>");
-                html.Append("RM" + row["userContact"] + "<br>");
-                html.Append("RM" + row["userRole"] + "<br>");
+                html.Append( row["userEmail"] + "<br>");
+                html.Append( row["userContact"] + "<br>");
+                html.Append( row["userRole"] + "<br>");
 
                 html.Append("<div class=\"text-center  py-3\">");
                 html.Append("<a class=\"btn btn-success text-white\">Edit</a>");

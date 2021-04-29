@@ -171,6 +171,7 @@
     <Content Include="Development\ProductList.aspx" />
     <Content Include="Development\Product_information.aspx" />
     <Content Include="Development\Register.aspx" />
+    <Content Include="Development\SalesHistory.aspx" />
     <Content Include="Development\Shops.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -394,6 +395,13 @@
     </Compile>
     <Compile Include="Development\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\SalesHistory.aspx.cs">
+      <DependentUpon>SalesHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\SalesHistory.aspx.designer.cs">
+      <DependentUpon>SalesHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\Shops.aspx.cs">
       <DependentUpon>Shops.aspx</DependentUpon>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Development/LayoutAdmin.Master" CodeBehind="Edit Product.aspx.cs" Inherits="Expensive_co.Development.EditProduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Development/LayoutAdmin.Master" CodeBehind="EditProduct.aspx.cs" Inherits="Expensive_co.Development.EditProduct" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -48,6 +48,7 @@
                             <div class="mb-3">
                                 <label for="inputsubject">Product Image:</label>
                                 <asp:FileUpload ID="productimage" runat="server" />
+                                <asp:Image ID="currentproductImage" Class="card-img rounded-0" runat="server" />
                             </div>
 
                             <div class="mb-3">
@@ -78,8 +79,8 @@
                         
                                 </div>
                                 <div class="col text-end mt-2">
-                                    <button type="submit" class="btn btn-success btn-lg px-3">Edit Product</button>
-                                
+                                    <asp:Button ID="EditBtn" class="btn btn-success btn-lg px-3" runat="server" Text="Edit Product" OnClick="EditBtn_Click" />
+                           
                                 </div>
                             </div>
                

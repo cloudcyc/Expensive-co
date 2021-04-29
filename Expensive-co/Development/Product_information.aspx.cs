@@ -21,7 +21,7 @@ namespace Expensive_co.Development
 
             if (Request.QueryString["productID"] == null)
             {
-                //Response.Redirect("Shops.aspx");
+                Response.Redirect("Shops.aspx");
             }
             else
             {
@@ -71,7 +71,17 @@ namespace Expensive_co.Development
 
         protected void AddToCartBtn_Click(object sender, EventArgs e)
         {
+            if (Session["userRole"] == "Admin")
+            {
+                Response.Redirect("AdminDashboard.aspx");
 
+
+
+            }
+            else
+            {
+
+            }
         }
 
         protected void MinusQuantity_Click(object sender, EventArgs e)

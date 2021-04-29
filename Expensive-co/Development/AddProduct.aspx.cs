@@ -24,11 +24,11 @@ namespace Expensive_co.Development
 
             productimage.PostedFile.SaveAs(Server.MapPath("../Assets/productImg/") + file_name);
 
-            addProductCommand.Parameters.AddWithValue("@productName", this.productname.Text);
-            addProductCommand.Parameters.AddWithValue("@productDescription", this.productdescription.Text);
-            addProductCommand.Parameters.AddWithValue("@productPrice", this.productprice.Text);
-            addProductCommand.Parameters.AddWithValue("@productBrand", this.productbrand.Text);
-            addProductCommand.Parameters.AddWithValue("@productCategory", this.productcategories.Text);
+            addProductCommand.Parameters.AddWithValue("@productName", productname.Text);
+            addProductCommand.Parameters.AddWithValue("@productDescription", productdescription.Text);
+            addProductCommand.Parameters.AddWithValue("@productPrice", productprice.Text);
+            addProductCommand.Parameters.AddWithValue("@productBrand", productbrand.Text);
+            addProductCommand.Parameters.AddWithValue("@productCategory", productcategories.Text);
             addProductCommand.Parameters.AddWithValue("@productStatus", "1");
             
 

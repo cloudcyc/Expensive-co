@@ -40,7 +40,7 @@ namespace Expensive_co.Development
                     html.Append("RM" + row["productPrice"] + "<br>");
 
                     html.Append("<div class=\"text-center  py-3\">");
-                    html.Append("<a class=\"btn btn-success text-white\" href=\"EditProduct.aspx\">Edit</a>");
+                    html.Append("<a class=\"btn btn-success text-white\" href=\"EditProduct.aspx?productStatus=" + row["productStatus"] + "&productID=" + row["productID"] + "\">Edit</a>");
                     html.Append("<a class=\"btn btn-danger text-white\" href=\"DeleteProduct.aspx?productID=" + row["productID"] + "\">Delete</a>");
                     if (row["productStatus"].ToString() == "1")
                     {

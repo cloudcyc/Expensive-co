@@ -23,27 +23,27 @@ namespace Expensive_co.Development
 
                 foreach (DataRow row in dt.Rows)
                 {
-                   
-                    html.Append("<div class=\"col-md-6 col-lg-3 pb-5\">");
-                    html.Append("<div class=\"card mb-4 product-wap rounded-0\">");
-                    if (row["productImage"].ToString() == "")
-                    {
-                        html.Append("<img class=\"card-img rounded-0\" src=\"../Assets/img/NoProductImage.png\">");
-                    }
-                    else
-                    {
-                        html.Append("<img class=\"card-img rounded-0\" src =\"../Assets/productImg/" + row["productImage"] + "\" >");
-                    }
-                    html.Append("<div class=\"card-body\">");
+                     html.Append("<div class=\"col-md-6 col-lg-3 pb-5\">");
+                        html.Append("<a href=\"Product_information.aspx?productID=" + row["productID"] + "\">");
+                            html.Append("<div class=\"card mb-4 product-wap rounded-0\">");
+                            if (row["productImage"].ToString() == "")
+                            {
+                                html.Append("<img class=\"card-img rounded-0\" src=\"../Assets/img/NoProductImage.png\">");
+                            }
+                            else
+                            {
+                                html.Append("<img class=\"card-img rounded-0\" src =\"../Assets/productImg/" + row["productImage"] + "\" >");
+                            }
+                            html.Append("<div class=\"card-body\">");
 
-                                     html.Append("<h3>" + row["productName"] + "</h3>");
-                                     html.Append("RM" + row["productPrice"] + "<br>");
+                            html.Append("<h3>" + row["productName"] + "</h3>");
+                            html.Append("RM" + row["productPrice"] + "<br>");
 
-                    html.Append("</div>");
-                    html.Append("</div>");
-                    html.Append("</div>");
-
-
+                            html.Append("</div>");
+                            html.Append("</div>");
+                        html.Append("</a>");
+                     html.Append("</div>");
+                    
                 }
 
                 PlaceHolder2.Controls.Add(new Literal { Text = html.ToString() });

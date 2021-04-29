@@ -32,9 +32,14 @@
                                 </li>
                             </ul>
 
-                            <h6>Description:</h6>
-                            <asp:Label ID="Label4" runat="server" Text="Label" class="h6"></asp:Label>
-                            
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                <h6>Description:</h6>
+                                </li>
+                               
+                                <asp:Label ID="Label4" runat="server" Text="Label" class="h6"></asp:Label>
+                                
+                            </ul>
 
                             
                             <form id="form1" runat="server">
@@ -65,12 +70,14 @@
                                             
                                         </ul>
                                     </div>
+                                    <br />
                                     <div class="col-auto">
                                         <ul class="list-inline pb-3">
                                             <li class="list-inline-item text-right">
-                                                Quantity
+                                                Quantity:
                                                 <input type="hidden" name="product-quanity" id="product-quanity" value="1">
                                             </li>
+
 
                                             <li class="list-inline-item"><a id="MinusQuantity" onserverclick="MinusQuantity_Click" runat="server"><span class="btn btn-success" id="btn-minus">-</span></a></li>
                                             <li class="list-inline-item">

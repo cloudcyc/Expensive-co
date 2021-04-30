@@ -27,11 +27,11 @@ namespace Expensive_co.Development
 
             SqlCommand registerQuery = new SqlCommand("INSERT INTO Users (userFullName, userEmail, userContact, userPassword, userAddress, userRole, userDOB) VALUES (@userFullName,@userEmail,@userContact,@userPassword,@userAddress,@userRole,@userDOB)", connect);
 
-            bool Validation = validationFunction(this.FirstName.Text, this.LastName.Text, this.Email.Text, this.Phone.Text, this.Password.Text, this.ConfirmPassword.Text, this.DOB.Text);
+            bool Validation = validationFunction(this.FirstName.Text, this.Email.Text, this.Phone.Text, this.Password.Text, this.ConfirmPassword.Text, this.DOB.Text);
 
             if (Validation == true)
             {
-                registerQuery.Parameters.AddWithValue("@userFullName", this.FirstName.Text + " " + this.LastName.Text);
+                registerQuery.Parameters.AddWithValue("@userFullName", this.FirstName.Text);
                 registerQuery.Parameters.AddWithValue("@userEmail", this.Email.Text);
                 registerQuery.Parameters.AddWithValue("@userContact", this.Phone.Text);
                 registerQuery.Parameters.AddWithValue("@userPassword", this.ConfirmPassword.Text);
@@ -54,14 +54,14 @@ namespace Expensive_co.Development
  
         }
 
-        public bool validationFunction(string FirstName, string LastName, string Email, string PhoneNumber, string Password, string ConfirmPassword, string DOB)
+        public bool validationFunction(string Fullname, string Email, string PhoneNumber, string Password, string ConfirmPassword, string DOB)
         {
             Regex checkNum = new Regex(@"^\d+$"); //Only number
             Regex checkStrongPassword = new Regex(@"^.*(?=.{7,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{6,20}$"); //Atleast 1 upper and lower, 1 number, and special character
             Regex checkEmail = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"); //checking email can be xxx@mail.xxx.xx.xxx.my
             if (Password == ConfirmPassword)
             {
-                if (FirstName != null && checkEmail.IsMatch(Email) && checkNum.IsMatch(PhoneNumber) && checkStrongPassword.IsMatch(Password) && checkStrongPassword.IsMatch(ConfirmPassword) && DOB !=null)
+                if (Fullname != null && checkEmail.IsMatch(Email) && checkNum.IsMatch(PhoneNumber) && checkStrongPassword.IsMatch(Password) && checkStrongPassword.IsMatch(ConfirmPassword) && DOB !=null)
                 {
                     SqlCommand checkRegisteredEmail = new SqlCommand("select * from Users where userEmail=@userEmail", connect);
                     checkRegisteredEmail.Parameters.AddWithValue("@userEmail", Email);

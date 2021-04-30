@@ -21,13 +21,13 @@
                             <div class="row">
                                 <div class="form-group col-md-6 mb-3">
                                     <label for="inputname">First Name</label>
-                                    <asp:TextBox ID="FirstName" runat="server" class="form-control mt-1" name="First" placeholder="First Name"></asp:TextBox>       
+                                    <asp:TextBox ID="FullName" runat="server" class="form-control mt-1" name="First" placeholder="First Name"></asp:TextBox>       
                             </div>
-                            <div class="form-group col-md-6 mb-3">
+                            <%--<div class="form-group col-md-6 mb-3">
                                 <label for="inputemail">Last Name</label>
                         
                                 <asp:TextBox ID="LastName" runat="server" class="form-control mt-1" name="Last" placeholder="Last Name"></asp:TextBox>
-                            </div>
+                            </div>--%>
                         </div>
                 
                         <div class="mb-3">
@@ -75,7 +75,8 @@
                         
                             </div>
                             <div class="col text-end mt-2">
-                                <button type="submit" class="btn btn-success btn-lg px-3">Edit Profile</button>
+                                <asp:Button ID="EditProfileBtn" runat="server" Text="Edit Profile" class="btn btn-success btn-lg px-3" OnClick="EditProfileBtn_Click"/>
+                                
                             </div>
                         </div>
                     </form>

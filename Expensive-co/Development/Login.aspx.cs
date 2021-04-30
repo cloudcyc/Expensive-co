@@ -40,11 +40,15 @@ namespace Expensive_co.Development
                 string LoginEmail = dt.Rows[counted]["userEmail"].ToString();
                 string LoginPassword = dt.Rows[counted]["userPassword"].ToString();
                 string LoginUserFullName = dt.Rows[counted]["userFullName"].ToString();
+                int LoginUserID = Convert.ToInt32(dt.Rows[counted]["userID"]);
+                int LoginUserPhone = Convert.ToInt32(dt.Rows[counted]["userContact"]);
 
                 if (LoginEmail == this.Email.Text && LoginPassword == this.Password.Text)
                 {
                     Session["userEmail"] = LoginEmail;
                     Session["userFullName"] = LoginUserFullName;
+                    Session["userID"] = LoginUserID;
+                    Session["userPhone"] = LoginUserPhone;
                     if (dt.Rows[counted]["userRole"].ToString() == "Admin")
                     {
                         Session["userRole"] = "Admin";

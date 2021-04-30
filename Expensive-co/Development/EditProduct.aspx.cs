@@ -25,28 +25,33 @@ namespace Expensive_co.Development
             }
             else
             {
-                product_ID = Convert.ToInt32(Request.QueryString["productID"]);
-                SqlCommand SelectedProductCommand = new SqlCommand("SELECT* FROM Products WHERE productID =" + product_ID, connect);
-                SqlDataAdapter SelectedProductAdapter = new SqlDataAdapter(SelectedProductCommand);
-                DataTable SelectedProductDT = new DataTable();
-                SelectedProductAdapter.Fill(SelectedProductDT);
-                connect.Open();
-                SelectedProductCommand.ExecuteNonQuery();
-                connect.Close();
-
-                foreach (DataRow row in SelectedProductDT.Rows)
+                if (!IsPostBack)
                 {
+                    product_ID = Convert.ToInt32(Request.QueryString["productID"]);
+                    SqlCommand SelectedProductCommand = new SqlCommand("SELECT* FROM Products WHERE productID =" + product_ID, connect);
+                    SqlDataAdapter SelectedProductAdapter = new SqlDataAdapter(SelectedProductCommand);
+                    DataTable SelectedProductDT = new DataTable();
+                    SelectedProductAdapter.Fill(SelectedProductDT);
+                    connect.Open();
+                    SelectedProductCommand.ExecuteNonQuery();
+                    connect.Close();
 
-                    this.productname.Text = row["productName"].ToString();
-                    this.productprice.Text = row["productPrice"].ToString();
-                    this.productbrand.Text = row["productBrand"].ToString();
-                    
-                    this.currentproductImage.ImageUrl = "~/Assets/productImg/" + row["productImage"];
-                    this.currentproductImage.AlternateText = row["productImage"].ToString();
-                    this.productcategories.Text = row["productCategory"].ToString();
-                    this.productdescription.Text = row["productDescription"].ToString();
+                    foreach (DataRow row in SelectedProductDT.Rows)
+                    {
 
+                        this.productname.Text = row["productName"].ToString();
+                        this.productprice.Text = row["productPrice"].ToString();
+                        this.productbrand.Text = row["productBrand"].ToString();
+
+                        this.currentproductImage.ImageUrl = "~/Assets/productImg/" + row["productImage"];
+                        this.currentproductImage.AlternateText = row["productImage"].ToString();
+                        this.productcategories.Text = row["productCategory"].ToString();
+                        this.productdescription.Text = row["productDescription"].ToString();
+
+                    }
                 }
+                
+                
 
             }
         }
@@ -59,7 +64,8 @@ namespace Expensive_co.Development
             
             if (file_name != "")
             {
-                 productimage.PostedFile.SaveAs(Server.MapPath("../Assets/productImg/") + file_name);
+                File.Delete(Server.MapPath("../Assets/productImg/") + currentproductImage.AlternateText);
+                productimage.PostedFile.SaveAs(Server.MapPath("../Assets/productImg/") + file_name);
             }
            
             query = "Update Products SET productName =@productName, productDescription =@productDescription , productPrice =@productPrice , productBrand =@productBrand , productCategory =@productCategory, productStatus =@productStatus , productImage =@productImage  WHERE productID=@productID";

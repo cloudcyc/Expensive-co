@@ -24,11 +24,11 @@
                         
                         <asp:TextBox ID="FirstName" runat="server" class="form-control mt-1" name="First" placeholder="First Name"></asp:TextBox>       
                     </div>
-                    <div class="form-group col-md-6 mb-3">
+                    <%--<div class="form-group col-md-6 mb-3">
                         <label for="inputemail">Last Name</label>
                         
                         <asp:TextBox ID="LastName" runat="server" class="form-control mt-1" name="Last" placeholder="Last Name"></asp:TextBox>
-                    </div>
+                    </div>--%>
                 </div>
                 
                 <div class="mb-3">

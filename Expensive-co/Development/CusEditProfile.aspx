@@ -1,19 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Development/Layout.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Expensive_co.Development.Register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Development/Layout.Master" AutoEventWireup="true" CodeBehind="CusEditProfile.aspx.cs" Inherits="Expensive_co.Development.CusEditProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <!-- Start Content Page -->
-    <div class="container-fluid bg-light py-5">
-        <div class="col-md-6 m-auto text-center">
-            <h1 class="h1">Register an account</h1>
-            <p>
-                Join us now for getting more privilege
-            </p>
-        </div>
-    </div>
-
-    <!-- Register Form -->
+     <!-- Edit Profile Form -->
     <div class="container py-5">
         <div class="row py-5">
             <form class="col-md-9 m-auto" method="post" role="form" runat="server">
@@ -76,12 +66,12 @@
                         
                     </div>
                     <div class="col text-end mt-2">
-                        <asp:Button ID="RegisterBtn" class="btn btn-success btn-lg px-3" runat="server" Text="Create an Account" OnClick="RegisterBtn_Click" />
+                        <button type="submit" class="btn btn-success btn-lg px-3">Submit Form</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <!-- Register Form -->
+    <!-- Edit Profile Form -->
 
 </asp:Content>

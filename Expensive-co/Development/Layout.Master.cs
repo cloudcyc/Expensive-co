@@ -30,7 +30,7 @@ namespace Expensive_co.Development
             }else if (Session["userEmail"] != null && Session["userRole"] == "Member")
             {
                 //Login button change to Account button which lead to dashboard for member
-                this.btn1.HRef = "#";
+                this.btn1.HRef = "CusEditProfile.aspx";
                 this.LoginAccount_btn_Label.Text = "Account";
 
                 //Register button change to Logout button

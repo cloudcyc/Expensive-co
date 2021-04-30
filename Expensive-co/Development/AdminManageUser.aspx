@@ -10,9 +10,19 @@
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">Manage User Account</h4> 
                                                 
-                    </div>                    
+                    </div> 
+                    
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <div class="d-md-flex">
+                            <ol class="breadcrumb ms-auto"></ol>
+                            <a class="btn btn-success text-white" href="AddUser.aspx">Add New User</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+ 
+            
         
         
 

@@ -157,11 +157,15 @@
     <Content Include="Default.aspx" />
     <Content Include="Development\About.aspx" />
     <Content Include="Development\AddProduct.aspx" />
+    <Content Include="Development\AddUser.aspx" />
     <Content Include="Development\AdminDashboard.aspx" />
     <Content Include="Development\AdminEditProfile.aspx" />
+    <Content Include="Development\AdminEditUser.aspx" />
     <Content Include="Development\AdminManageUser.aspx" />
     <Content Include="Development\ChangeProductStatus.aspx" />
     <Content Include="Development\Contact.aspx" />
+    <Content Include="Development\CusEditProfile.aspx" />
+    <Content Include="Development\CusOrderHistory.aspx" />
     <Content Include="Development\DeleteProduct.aspx" />
     <Content Include="Development\EditProduct.aspx" />
     <Content Include="Development\Home.aspx" />
@@ -284,6 +288,13 @@
     <Compile Include="Development\AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Development\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Development\AdminDashboard.aspx.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -297,6 +308,13 @@
     </Compile>
     <Compile Include="Development\AdminEditProfile.aspx.designer.cs">
       <DependentUpon>AdminEditProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\AdminEditUser.aspx.cs">
+      <DependentUpon>AdminEditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\AdminEditUser.aspx.designer.cs">
+      <DependentUpon>AdminEditUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\AdminManageUser.aspx.cs">
       <DependentUpon>AdminManageUser.aspx</DependentUpon>
@@ -318,6 +336,20 @@
     </Compile>
     <Compile Include="Development\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\CusEditProfile.aspx.cs">
+      <DependentUpon>CusEditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\CusEditProfile.aspx.designer.cs">
+      <DependentUpon>CusEditProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\CusOrderHistory.aspx.cs">
+      <DependentUpon>CusOrderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\CusOrderHistory.aspx.designer.cs">
+      <DependentUpon>CusOrderHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\DeleteProduct.aspx.cs">
       <DependentUpon>DeleteProduct.aspx</DependentUpon>

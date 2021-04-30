@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Development/LayoutAdmin.Master" CodeBehind="AdminEditProfile.aspx.cs" Inherits="Expensive_co.Development.AdminEditProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Development/LayoutAdmin.Master" CodeBehind="AdminEditUser.aspx.cs" Inherits="Expensive_co.Development.AdminEditUser" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -8,14 +8,13 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Edit Profile</h4> 
+                        <h4 class="page-title">Admin Edit User Account</h4> 
                                                 
-                    </div>
+                    </div> 
                 </div>
             </div>
-            
 
-                    <div class="container py-5">
+        <div class="container py-5">
                      <div class="row py-5">
                         <form id="form1" class="col-md-9 m-auto" runat="server">
                         <div class="row">
@@ -51,21 +50,6 @@
                         </div>
 
                         <div class="row">
-                            <div class="form-group col-md-6 mb-3">
-                                <label for="inputsubject">Password</label>
-                    
-                                <asp:TextBox ID="Password" runat="server" name="Password" placeholder="Insert Your Password" TextMode="Password" class="form-control mt-1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"></asp:TextBox>
-                                <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="At least 1 Upper and 1 Lower case, 1 Number, and 1 Special Character">Password Requirements</i>
-
-                            </div>
-
-                            <div class="form-group col-md-6 mb-3">
-                                <label for="inputsubject">Confirm Password</label>
-                                <asp:TextBox ID="ConfirmPassword" runat="server" name="Password" placeholder="Confirm Password" TextMode="Password" class="form-control mt-1"></asp:TextBox>
-                            </div>
-                        </div>
-
-                        <div class="row">
                             <%--this is the invalid warning--%>
                             <div class="col mt-2 ">
                                 <asp:Panel ID="InvalidPanel" visible="false" class="alert alert-danger" runat="server">
@@ -74,7 +58,7 @@
                         
                             </div>
                             <div class="col text-end mt-2">
-                                <asp:Button ID="EditProfileBtn" runat="server" Text="Edit Profile" class="btn btn-success btn-lg px-3" OnClick="EditProfileBtn_Click"/>
+                                <button type="submit" class="btn btn-success btn-lg px-3">Update User Profile</button>
                                 
                             </div>
                         </div>
@@ -82,6 +66,4 @@
                 </div>
             </div>
         </div>
-    
-
 </asp:Content>

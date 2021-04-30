@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Expensive_co.Development
 {
-    public partial class AdminManageUser : System.Web.UI.Page
+    public partial class CusOrderHistory : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,24 +20,14 @@ namespace Expensive_co.Development
 
             foreach (DataRow row in dt.Rows)
             {
-                html.Append("<div class=\"col-md-6 col-lg-3 pb-5\">");
-                html.Append("<div class=\"card mb-4 product-wap rounded-0\">");
-                html.Append("<div class=\"card-body\">");
-
-                html.Append("<h3>" + row["userFullName"] + "</h3>");
-                html.Append( row["userEmail"] + "<br>");
-                html.Append( row["userContact"] + "<br>");
-                html.Append( row["userRole"] + "<br>");
-
-                html.Append("<div class=\"text-center  py-3\">");
-                html.Append("<a class=\"btn btn-success text-white\" href=\"AdminEditUser.aspx\" > Edit</a>");
-                html.Append("<a class=\"btn btn-danger text-white\">Delete</a>");
+                html.Append("<tr>");
 
 
-                html.Append("</div>");
-                html.Append("</div>");
-                html.Append("</div>");
-                html.Append("</div>");
+                html.Append("<td>" + row["userID"] + "</td>");
+                html.Append("<td>" + row["userFullName"] + "</td>");
+                html.Append("<td>" + row["userEmail"] + "</td>");
+
+                html.Append("</tr>");
 
             }
             PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
@@ -60,5 +50,6 @@ namespace Expensive_co.Development
                 }
             }
         }
+
     }
 }

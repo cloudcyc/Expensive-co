@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Development/LayoutAdmin.Master" CodeBehind="AdminEditProfile.aspx.cs" Inherits="Expensive_co.Development.AdminEditProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Development/LayoutAdmin.Master" CodeBehind="AddUser.aspx.cs" Inherits="Expensive_co.Development.AddUser" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -8,14 +8,13 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Edit Profile</h4> 
+                        <h4 class="page-title">Manage User Account</h4> 
                                                 
-                    </div>
+                    </div> 
                 </div>
             </div>
-            
 
-                    <div class="container py-5">
+            <div class="container py-5">
                      <div class="row py-5">
                         <form id="form1" class="col-md-9 m-auto" runat="server">
                         <div class="row">
@@ -74,7 +73,7 @@
                         
                             </div>
                             <div class="col text-end mt-2">
-                                <asp:Button ID="EditProfileBtn" runat="server" Text="Edit Profile" class="btn btn-success btn-lg px-3" OnClick="EditProfileBtn_Click"/>
+                                <button type="submit" class="btn btn-success btn-lg px-3">Add New User</button>
                                 
                             </div>
                         </div>
@@ -82,6 +81,5 @@
                 </div>
             </div>
         </div>
-    
 
 </asp:Content>

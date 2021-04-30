@@ -26,10 +26,10 @@
                                 <li class="list-inline-item">
                                     <h6>Brand:</h6>
                                 </li>
-                                <li class="list-inline-item">
+                                
                                     <asp:Label ID="Label3" runat="server" Text="Label" class="text-muted"></asp:Label>
                                     <%--<p class="text-muted"><strong>LV</strong></p>--%>
-                                </li>
+                               
                             </ul>
 
                             <ul class="list-inline">

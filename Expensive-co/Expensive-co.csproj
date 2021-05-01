@@ -164,6 +164,7 @@
     <Content Include="Development\AdminManageUser.aspx" />
     <Content Include="Development\ChangeProductStatus.aspx" />
     <Content Include="Development\Contact.aspx" />
+    <Content Include="Development\CusCartPage.aspx" />
     <Content Include="Development\CusEditProfile.aspx" />
     <Content Include="Development\CusOrderHistory.aspx" />
     <Content Include="Development\DeleteProduct.aspx" />
@@ -336,6 +337,13 @@
     </Compile>
     <Compile Include="Development\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\CusCartPage.aspx.cs">
+      <DependentUpon>CusCartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\CusCartPage.aspx.designer.cs">
+      <DependentUpon>CusCartPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\CusEditProfile.aspx.cs">
       <DependentUpon>CusEditProfile.aspx</DependentUpon>

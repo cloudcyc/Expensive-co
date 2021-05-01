@@ -37,14 +37,25 @@ namespace Expensive_co.Development
             }
             else if (Session["userEmail"] != null && Session["userRole"] == "Member")
             {
+                //profile, cart, order
+                //<div class="dropdown">
+                //      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                //        Dropdown link
+                //      </a>
+                
+                //      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                //        <li><a class="dropdown-item" href="#">Action</a></li>
+                //        <li><a class="dropdown-item" href="#">Another action</a></li>
+                //        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                //      </ul>
+                //    </div>
 
-                html.Append("<li class=\"nav - item dropdown\">");
-                html.Append("<a class=\"nav-link dropdown-toggle\" href=\"CusEditProfile.aspx\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Profile</ a > ");
-                html.Append("<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">");
-                html.Append("<a class=\"dropdown-item\" href=\"CusCartPage.aspx\">View Cart</a>");
-                html.Append("<a class=\"dropdown-item\" href=\"CusOrderHistory.aspx\">Order History</a>");
-                html.Append("<div class=\"dropdown-divider\"></div>");
+                
+                //html.Append("<a class=\"dropdown-item\" href=\"CusCartPage.aspx\">View Cart</a>");
+                //html.Append("<a class=\"dropdown-item\" href=\"CusOrderHistory.aspx\">Order History</a>");
+                
                 html.Append("<a class=\"dropdown-item\" href=\"Logout.aspx\">Logout</a>");
+
                 //html.Append("<h2>Member</h2>");
                 //Dropdown to go profile, cart and order history and Logout button ***
 

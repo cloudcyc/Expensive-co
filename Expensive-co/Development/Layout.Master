@@ -90,21 +90,23 @@
 
 
                 <div class="navbar align-self-center d-flex">    
+                    
 
-                    <div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown link
-  </a>
+                    <%--<div class="dropdown show">
+                      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                      </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </div>--%>
 
                     <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
-                    <a runat="server" id="btn1" class="nav-icon position-relative text-decoration-none" href="Login.aspx">
+
+                    <%--<a runat="server" id="btn1" class="nav-icon position-relative text-decoration-none" href="Login.aspx">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i><asp:Label ID="LoginAccount_btn_Label" runat="server" Text="Login"></asp:Label>                    
                     </a>
 
@@ -112,7 +114,7 @@
 
                      <a runat="server" id="btn2" class="nav-icon position-relative text-decoration-none" href="Register.aspx">
                          <asp:Label ID="RegisterLogout_btn_Label" runat="server" Text="Register"></asp:Label>            
-                    </a>
+                    </a>--%>
 
                 </div>
             </div>                 

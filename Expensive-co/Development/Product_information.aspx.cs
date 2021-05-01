@@ -38,9 +38,11 @@ namespace Expensive_co.Development
 
                 foreach (DataRow row in SelectedProductDT.Rows)
                 {
-
+                    
                     this.Image1.ImageUrl = "~/Assets/productImg/" + row["productImage"];
                     this.Image1.AlternateText = row["productImage"].ToString();
+                    this.HiddenProductID.Text = row["productID"].ToString();
+                    this.HiddenProductCategory.Text = row["productCategory"].ToString();
                     Label1.Text = row["productName"].ToString();
                     Label2.Text = row["productPrice"].ToString();
                     Label3.Text = row["productBrand"].ToString();
@@ -71,16 +73,85 @@ namespace Expensive_co.Development
 
         protected void AddToCartBtn_Click(object sender, EventArgs e)
         {
+            String AddCartQuery = null;
+            String CheckCartQuery = null;
+            int cartNum = 1;
             if (Session["userRole"] == "Admin")
             {
                 Response.Redirect("AdminDashboard.aspx");
-
-
+                //Error message for you are an Admin
 
             }
-            else
+            else if (Session["userRole"] == null)
             {
+                Response.Redirect("Login.aspx");
+                //Error message for you are an Admin
+            }
+            else if (Session["userRole"] == "Member")
+            {
+                //check existing cart
+                CheckCartQuery = "SELECT COUNT(productID) as 'Number of product', cartID FROM Carts WHERE cartStatus = 'Checked Out' GROUP BY cartID"; //Thanks JY
+                SqlCommand CheckCartCommand = new SqlCommand(CheckCartQuery, connect);
+                SqlDataAdapter CheckCartAdapter = new SqlDataAdapter(CheckCartCommand);
+                DataTable CheckCartDT = new DataTable();
+                CheckCartAdapter.Fill(CheckCartDT);
 
+                connect.Open();
+                CheckCartCommand.ExecuteNonQuery();
+                connect.Close();
+
+                int RowCount = CheckCartDT.Rows.Count;
+                for (int counted = 0; counted <= RowCount; counted++)
+                {
+                    cartNum = cartNum + 1;
+                }
+                //End check cart
+
+                AddCartQuery = "INSERT INTO Carts (cartID, productID, productPrice, productQuantity, cartStatus, userID, productRequest) VALUES (@cartID,@productID,@productPrice,@productQuantity,@cartStatus,@userID,@productRequest)";
+                SqlCommand AddCartCommand = new SqlCommand(AddCartQuery, connect);
+   
+                AddCartCommand.Parameters.AddWithValue("@cartID", Session["userID"].ToString() + "00" + cartNum.ToString());
+                AddCartCommand.Parameters.AddWithValue("@productID", Convert.ToInt32(this.HiddenProductID.Text));
+                AddCartCommand.Parameters.AddWithValue("@productPrice", Convert.ToInt32(this.Label2.Text));
+                AddCartCommand.Parameters.AddWithValue("@productQuantity", Convert.ToInt32(this.QuantityNumber.Text));
+                AddCartCommand.Parameters.AddWithValue("@cartStatus", "Pending");
+                AddCartCommand.Parameters.AddWithValue("@userID", Convert.ToInt32(Session["userID"]));
+
+                if (this.HiddenProductCategory.Text == "Accessory")
+                {
+                    AddCartCommand.Parameters.AddWithValue("@productRequest", "Item is " + this.Label5.Text);
+                }
+                else if (this.HiddenProductCategory.Text == "Shoe")
+                {
+                    if (this.DropDownList1.SelectedIndex == 0)
+                    {
+                        //message box choose a Size
+                        return;
+
+                    }
+                    else
+                    {
+                        AddCartCommand.Parameters.AddWithValue("@productRequest", "Requested product size " + this.DropDownList1.Text);
+                    }
+                    
+                }
+                else
+                {
+                    if (this.DropDownList2.SelectedIndex == 0)
+                    {
+                        //message box choose a Size
+                        return;
+
+                    }
+                    else
+                    {
+                        AddCartCommand.Parameters.AddWithValue("@productRequest", "Requested product size " + this.DropDownList2.Text);
+                    }
+                }
+                connect.Open();
+                AddCartCommand.ExecuteNonQuery();
+                connect.Close();
+                //Finish go to cart
             }
         }
 

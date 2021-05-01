@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,6 +17,7 @@ namespace Expensive_co.Development
             int product_ID = Convert.ToInt32(Request.QueryString["productID"]);
             SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
             SqlCommand DeleteProduct = new SqlCommand("DELETE FROM Products WHERE productID ="+ product_ID, connect);
+            File.Delete(Server.MapPath("../Assets/productImg/") + Request.QueryString["productImage"]);
             connect.Open();
             DeleteProduct.ExecuteNonQuery();
             connect.Close();

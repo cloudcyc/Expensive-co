@@ -46,7 +46,7 @@ namespace Expensive_co.Development
         private DataTable GetData()
         {
             SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users", connect);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE NOT userID=" + Convert.ToInt32(Session["userID"]), connect);
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {

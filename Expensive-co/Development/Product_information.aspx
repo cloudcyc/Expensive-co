@@ -17,6 +17,8 @@
                 <div class="col-lg-7 mt-5">
                     <div class="card">
                         <div class="card-body">
+                            <asp:Label ID="HiddenProductID" class="d-none" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="HiddenProductCategory" class="d-none" runat="server" Text="Label"></asp:Label>
                             <asp:Label ID="Label1" runat="server" Text="Label" class="h2"></asp:Label>
                             <%--<h1 class="h2">LV Casual White Shoe</h1>--%>
                             <br />

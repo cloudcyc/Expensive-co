@@ -11,6 +11,8 @@
             </p>
         </div>
     </div>
+    
+
     <div class="container py-5">
     <div class="row py-5">
     <div class="container-fluid">
@@ -21,11 +23,11 @@
                                 <table class="table text-nowrap">
                                     <thead>
                                         <tr>
-                                            <th class="border-top-0">No.</th>
                                             <th class="border-top-0">Product</th>
                                             <th class="border-top-0">Product Name</th>
                                             <th class="border-top-0">Product Price</th>
-                                            <th class="border-top-0">Total Price</th>
+                                            <th class="border-top-0">Qauntity</th>
+                                            <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

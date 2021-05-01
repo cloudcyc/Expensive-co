@@ -17,8 +17,9 @@
                                 <table class="table text-nowrap">
                                     <thead>
                                         <tr>
-                                            <th class="border-top-0">Cart ID</th>
-                                            <th class="border-top-0">Cart ID</th>
+                                            <th class="border-top-0">Order ID</th>
+                                            <th class="border-top-0">Product</th>
+                                            <th class="border-top-0">Product Name</th>
                                             <th class="border-top-0">Total Price</th>
                                         </tr>
                                     </thead>

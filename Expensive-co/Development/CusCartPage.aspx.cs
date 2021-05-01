@@ -24,9 +24,10 @@ namespace Expensive_co.Development
                 html.Append("<tr>");
 
 
-                html.Append("<td>" + row["userID"] + "</td>");
-                html.Append("<td>" + row["userFullName"] + "</td>");
-                html.Append("<td>" + row["userEmail"] + "</td>");
+                html.Append("<td>" + row["productImage"] + "</td>");
+                html.Append("<td>" + row["productName"] + "</td>");
+                html.Append("<td>" + row["productPrice"] + "</td>");
+                html.Append("<td>" + row["productQuantity"] + "</td>");
 
                 html.Append("</tr>");
 
@@ -38,7 +39,7 @@ namespace Expensive_co.Development
         private DataTable GetData()
         {
             SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users", connect);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Users,Carts,Orders,Products", connect);
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {

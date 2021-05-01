@@ -20,9 +20,17 @@ namespace Expensive_co.Development
             StringBuilder html = new StringBuilder();
             if (Session["userEmail"] != null && Session["userRole"] == "Admin")
             {
-                
-                
-                
+
+                html.Append("<a runat=\"server\" id=\"btn1\" class=\"nav-icon position-relative text-decoration-none\" href=\"AdminDashboard.aspx\">");
+                html.Append("Return Dashboard");
+                html.Append("</a>");
+
+                html.Append("| &nbsp; &nbsp;");
+
+                html.Append("<a runat=\"server\" id=\"btn2\" class=\"nav-icon position-relative text-decoration-none\" href=\"Logout.aspx\">");
+                html.Append("Logout");
+                html.Append("</a>");
+
                 //html.Append("<h2>Admin</h2>");
                 //Navgiation to Admin Dashboard and logout btn***
 
@@ -39,10 +47,10 @@ namespace Expensive_co.Development
             {
                 //profile, cart, order
                 //<div class="dropdown">
-                //      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                //        Dropdown link
+                //      <a class="dropdown-toggle" href="CusEditProfile.aspx" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                //        Profile
                 //      </a>
-                
+
                 //      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 //        <li><a class="dropdown-item" href="#">Action</a></li>
                 //        <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -51,10 +59,27 @@ namespace Expensive_co.Development
                 //    </div>
 
                 
+
+                html.Append("<div class=\"dropdown\">");
+                html.Append("<a class=\"dropdown-toggle\" href=\"CusEditProfile.aspx\" role=\"button\" id=\"dropdownMenuLink\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Profile</a>");
+                html.Append("<ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">");
+                html.Append("<li><a class=\"dropdown-item\" href=\"CusCartPage.aspx\">View Cart</a></li>");
+                html.Append("<li><a class=\"dropdown-item\" href=\"CusOrderHistory.aspx\">Order History</a></li>");
+                html.Append("</ul>");
+                html.Append("</div>");
+
+                html.Append("&nbsp; &nbsp; | &nbsp; &nbsp;");
+
+                html.Append("<a runat=\"server\" id=\"btn2\" class=\"nav-icon position-relative text-decoration-none\" href=\"Logout.aspx\">");
+                html.Append("Logout");
+                html.Append("</a>");
+
+
+
                 //html.Append("<a class=\"dropdown-item\" href=\"CusCartPage.aspx\">View Cart</a>");
                 //html.Append("<a class=\"dropdown-item\" href=\"CusOrderHistory.aspx\">Order History</a>");
+
                 
-                html.Append("<a class=\"dropdown-item\" href=\"Logout.aspx\">Logout</a>");
 
                 //html.Append("<h2>Member</h2>");
                 //Dropdown to go profile, cart and order history and Logout button ***
@@ -69,7 +94,16 @@ namespace Expensive_co.Development
             }
             else
             {
+                
+                html.Append("<a runat=\"server\" id=\"btn1\" class=\"nav-icon position-relative text-decoration-none\" href=\"Login.aspx\">");
+                html.Append("Login");
+                html.Append("</a>");
 
+                html.Append("| &nbsp; &nbsp;");
+
+                html.Append("<a runat=\"server\" id=\"btn2\" class=\"nav-icon position-relative text-decoration-none\" href=\"Register.aspx\">");
+                html.Append("Register");
+                html.Append("</a>");
                 //html.Append("<h2>Login</h2>");
                 //Login button and Register button***
 

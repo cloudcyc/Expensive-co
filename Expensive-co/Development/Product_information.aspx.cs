@@ -152,6 +152,7 @@ namespace Expensive_co.Development
                 AddCartCommand.ExecuteNonQuery();
                 connect.Close();
                 //Finish go to cart
+                Response.Redirect("CusCartPage.aspx");
             }
         }
 

@@ -8,6 +8,7 @@
             <h1 class="h1">Your Cart</h1>   
             <p>
                 Check Out Your Goods Here
+                
             </p>
         </div>
     </div>
@@ -23,16 +24,29 @@
                                 <table class="table text-nowrap">
                                     <thead>
                                         <tr>
+                                            <asp:Label ID="currentCartID" runat="server" Text="NoCartID" class="d-none"></asp:Label>
                                             <th class="border-top-0">Product</th>
                                             <th class="border-top-0">Product Name</th>
                                             <th class="border-top-0">Product Price</th>
                                             <th class="border-top-0">Qauntity</th>
+                                            <th class="border-top-0">Description</th>
                                             <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                          <td></td>
+                                          <td>Total Amount:</td>
+                                          <td>RM <asp:Label ID="TotalAmount" runat="server" Text="TotalAmount"></asp:Label></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                            
+                                        </tr>
+                                    </tfoot>
 
                                     
 
@@ -49,9 +63,12 @@
             </div>
 
                 <div class="row">
-                    <div class="col text-end mt-2">
-                        <button type="button" class="btn btn-success btn-lg btn-block">       Check Out        </button>
-                    </div>
+                    <form runat=server>
+                        
+                        <div class="col text-end mt-2">
+                            <asp:Button ID="CheckOutBtn" runat="server" Text="Check Out" class="btn btn-success btn-lg btn-block" OnClick="CheckOutBtn_Click"/>     
+                        </div>
+                    </form>
                 </div>
 
         </div>

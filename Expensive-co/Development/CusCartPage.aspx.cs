@@ -13,52 +13,103 @@ namespace Expensive_co.Development
 {
     public partial class CusCartPage : System.Web.UI.Page
     {
+        SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
 
             DataTable dt = GetData();
             StringBuilder html = new StringBuilder();
+            double TotalAmountPerItem = 0;
+            double TotalAmount = 0;
 
             foreach (DataRow row in dt.Rows)
             {
-                html.Append("<tr>");
+                this.currentCartID.Text = row["cartID"].ToString();
+                SqlCommand SelectedProductInCartCommand = new SqlCommand("SELECT* FROM Products WHERE productID =" + row["productID"], connect);
+                SqlDataAdapter SelectedProductInCartAdapter = new SqlDataAdapter(SelectedProductInCartCommand);
+                DataTable SelectedProductInCartDT = new DataTable();
+                SelectedProductInCartAdapter.Fill(SelectedProductInCartDT);
+                connect.Open();
+                SelectedProductInCartCommand.ExecuteNonQuery();
+                connect.Close();
 
+                html.Append("<tr>");
+                
+
+                
+                foreach (DataRow rowInCart in SelectedProductInCartDT.Rows)
+                {
+                    html.Append("<td>");
+                        html.Append("<img class=\"col-md-6 col-lg-3 pb-5\" src =\"../Assets/productImg/" + rowInCart["productImage"] + "\">");
+                    html.Append("</td>");
+                    html.Append("<td>" + rowInCart["productName"] + "</td>");
+                }
+                
+                html.Append("<td>" + "RM "+ row["productPrice"] + "</td>");
+                html.Append("<td>" + row["productQuantity"] + "</td>");
+                html.Append("<td>" + row["productRequest"] + "</td>");
                 html.Append("<td>");
-                //html.Append("<div class=\"col-3 p-md-5\">");
-                html.Append("<img class=\"col-md-6 col-lg-3 pb-5\" src =\"../Assets/img/lv.jpg\">");
-                //html.Append("</div>");
-                html.Append("</td>");
-                html.Append("<td>" + row["productName"] + "</td>");
-                html.Append("<td>" + row["productPrice"] + "</td>");
-                html.Append("<td>");
-                html.Append("<a class=\"btn btn-danger text-white\" href=\"#\">Delete</a>");
+                html.Append("<a class=\"btn btn-danger text-white\" href=\"DeleteFunction.aspx?inCartproduct_ID=" + row["productID"] + "&currentCart_ID=" + row["cartID"] + "\">Delete</a>");
                 html.Append("</td>");
 
 
                 html.Append("</tr>");
+                TotalAmountPerItem = Convert.ToDouble(row["productPrice"]) * Convert.ToInt32(row["productQuantity"]);
+                TotalAmount = TotalAmount + TotalAmountPerItem;
 
             }
+            this.TotalAmount.Text = TotalAmount.ToString();
             PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
 
         }
 
         private DataTable GetData()
         {
-            SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Products", connect);
+            
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Carts WHERE userID ="+ Convert.ToInt32(Session["userID"]) + "AND cartStatus = 'Pending'", connect);
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {
                     cmd.Connection = connect;
                     sda.SelectCommand = cmd;
-                    using (DataTable dt = new DataTable())
+                    using (DataTable testingdt = new DataTable())
                     {
-                        sda.Fill(dt);
-                        return dt;
+                        sda.Fill(testingdt);
+                        return testingdt;
                     }
                 }
             }
         }
 
+        protected void CheckOutBtn_Click(object sender, EventArgs e)
+        {
+            if (this.currentCartID.Text != "NoCartID")
+            {
+                DateTime currentTime = DateTime.Now;
+                String CheckOutQuery = "INSERT INTO Orders (cartID, totalPrice, userID, orderStatus, orderDate) VALUES(@cartID, @totalPrice, @userID, @orderStatus, @orderDate)";
+                SqlCommand CheckOutCommand = new SqlCommand(CheckOutQuery, connect);
+                CheckOutCommand.Parameters.AddWithValue("@cartID", Convert.ToInt32(this.currentCartID.Text));
+                CheckOutCommand.Parameters.AddWithValue("@totalPrice", this.TotalAmount.Text);
+                CheckOutCommand.Parameters.AddWithValue("@userID", Convert.ToInt32(Session["userID"]));
+                CheckOutCommand.Parameters.AddWithValue("@orderStatus", "Packing");
+                CheckOutCommand.Parameters.AddWithValue("@orderDate", currentTime.ToString("yyyy-MM-dd hh:mm"));
+
+                String UpdateCartQuery = "Update Carts SET cartStatus = @cartStatus WHERE cartID=@cartID";
+                SqlCommand UpdateCartCommand = new SqlCommand(UpdateCartQuery, connect);
+                UpdateCartCommand.Parameters.AddWithValue("@cartStatus", "Checked Out");
+                UpdateCartCommand.Parameters.AddWithValue("@cartID", Convert.ToInt32(this.currentCartID.Text));
+                connect.Open();
+                UpdateCartCommand.ExecuteNonQuery();
+                CheckOutCommand.ExecuteNonQuery();
+                connect.Close();
+
+                Response.Redirect("CusOrderHistory.aspx");
+            }
+            else
+            {
+                //Error message
+            }
+            
+        }
     }
 }

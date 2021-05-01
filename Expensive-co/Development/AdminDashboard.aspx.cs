@@ -14,7 +14,10 @@ namespace Expensive_co.Development
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            DataTable OrderTable = this.GetTotalSalesData();
+            object TotalSalesObject;
+            TotalSalesObject = OrderTable.Compute("Sum(totalPrice)", string.Empty);
+            this.TotalSales.Text = "RM " + TotalSalesObject.ToString();
 
             //displaying the total Member
             DataTable MemberTable = this.GetMemberData();
@@ -50,6 +53,24 @@ namespace Expensive_co.Development
         {
             SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
             SqlCommand cmd = new SqlCommand("SELECT * FROM Users Where userRole='Member'", connect);
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter())
+                {
+                    cmd.Connection = connect;
+                    sda.SelectCommand = cmd;
+                    using (DataTable dt = new DataTable())
+                    {
+                        sda.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
+        private DataTable GetTotalSalesData()
+        {
+            SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Orders", connect);
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {

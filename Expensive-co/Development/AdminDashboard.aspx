@@ -18,7 +18,12 @@
                         <div class="white-box analytics-info">
                             <h3 class="box-title">Total Sales</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">                                
-                                <li class="ms-auto"><span class="counter text-success"><b>RM 1,000,000</b></span></li>
+                                <li class="ms-auto">
+                                    <span class="counter text-success">
+                                        <asp:Label ID="TotalSales" runat="server" Text="Label" class="counter fw-bold"></asp:Label> 
+                                     </span>
+
+                                </li>
                             </ul>
                         </div>
                     </div>

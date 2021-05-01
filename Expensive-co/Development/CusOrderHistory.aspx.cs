@@ -23,9 +23,14 @@ namespace Expensive_co.Development
                 html.Append("<tr>");
 
 
-                html.Append("<td>" + row["userID"] + "</td>");
-                html.Append("<td>" + row["userFullName"] + "</td>");
-                html.Append("<td>" + row["userEmail"] + "</td>");
+                html.Append("<td>" + row["orderID"] + "</td>");
+                html.Append("<td>" + row["cartID"] + "</td>");
+                html.Append("<td>" + row["totalPrice"] + "</td>");
+                html.Append("<td>" + row["orderStatus"] + "</td>");
+                html.Append("<td>" + row["orderDate"] + "</td>");
+                html.Append("<td>");
+                    html.Append("<a class=\"btn btn-danger text-white\" href=\"?cart_ID=" + row["cartID"] + "\">View Cart</a>");
+                html.Append("</td>");
 
                 html.Append("</tr>");
 
@@ -36,16 +41,16 @@ namespace Expensive_co.Development
         private DataTable GetData()
         {
             SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users", connect);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Orders WHERE userID=" + Convert.ToInt32(Session["userID"]), connect);
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {
                     cmd.Connection = connect;
                     sda.SelectCommand = cmd;
-                    using (DataTable dt = new DataTable())
+                    using (DataTable gettingDataDT = new DataTable())
                     {
-                        sda.Fill(dt);
-                        return dt;
+                        sda.Fill(gettingDataDT);
+                        return gettingDataDT;
                     }
                 }
             }

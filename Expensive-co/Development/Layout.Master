@@ -86,17 +86,18 @@
                         </li>
                     </ul>
                 </div>
-                <div class="navbar align-self-center d-flex">                                 
-                    <a runat="server" id="btn1" class="nav-icon position-relative text-decoration-none" href="Login.aspx">
+                <div class="navbar align-self-center d-flex">    
+
+                    <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+                    <%--<a runat="server" id="btn1" class="nav-icon position-relative text-decoration-none" href="Login.aspx">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i><asp:Label ID="LoginAccount_btn_Label" runat="server" Text="Login"></asp:Label>                    
                     </a>
 
                     | &nbsp; &nbsp;
 
                      <a runat="server" id="btn2" class="nav-icon position-relative text-decoration-none" href="Register.aspx">
-                         <asp:Label ID="RegisterLogout_btn_Label" runat="server" Text="Register"></asp:Label> 
-                                         
-                    </a>
+                         <asp:Label ID="RegisterLogout_btn_Label" runat="server" Text="Register"></asp:Label>            
+                    </a>--%>
 
                 </div>
             </div>                 

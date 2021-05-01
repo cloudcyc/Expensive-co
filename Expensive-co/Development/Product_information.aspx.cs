@@ -90,7 +90,7 @@ namespace Expensive_co.Development
             else if (Session["userRole"] == "Member")
             {
                 //check existing cart
-                CheckCartQuery = "SELECT COUNT(productID) as 'Number of product', cartID FROM Carts WHERE cartStatus = 'Checked Out' GROUP BY cartID"; //Thanks JY
+                CheckCartQuery = "SELECT COUNT(productID) as 'Number of product', cartID FROM Carts WHERE cartStatus = 'Checked Out' AND userID =" + Convert.ToInt32(Session["userID"]) + " GROUP BY cartID"; //Thanks JY
                 SqlCommand CheckCartCommand = new SqlCommand(CheckCartQuery, connect);
                 SqlDataAdapter CheckCartAdapter = new SqlDataAdapter(CheckCartCommand);
                 DataTable CheckCartDT = new DataTable();

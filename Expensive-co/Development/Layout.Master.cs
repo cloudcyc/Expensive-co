@@ -20,6 +20,9 @@ namespace Expensive_co.Development
             StringBuilder html = new StringBuilder();
             if (Session["userEmail"] != null && Session["userRole"] == "Admin")
             {
+                
+                
+                
                 //html.Append("<h2>Admin</h2>");
                 //Navgiation to Admin Dashboard and logout btn***
 
@@ -34,6 +37,14 @@ namespace Expensive_co.Development
             }
             else if (Session["userEmail"] != null && Session["userRole"] == "Member")
             {
+
+                html.Append("<li class=\"nav - item dropdown\">");
+                html.Append("<a class=\"nav-link dropdown-toggle\" href=\"CusEditProfile.aspx\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Profile</ a > ");
+                html.Append("<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">");
+                html.Append("<a class=\"dropdown-item\" href=\"CusCartPage.aspx\">View Cart</a>");
+                html.Append("<a class=\"dropdown-item\" href=\"CusOrderHistory.aspx\">Order History</a>");
+                html.Append("<div class=\"dropdown-divider\"></div>");
+                html.Append("<a class=\"dropdown-item\" href=\"Logout.aspx\">Logout</a>");
                 //html.Append("<h2>Member</h2>");
                 //Dropdown to go profile, cart and order history and Logout button ***
 
@@ -47,6 +58,7 @@ namespace Expensive_co.Development
             }
             else
             {
+
                 //html.Append("<h2>Login</h2>");
                 //Login button and Register button***
 

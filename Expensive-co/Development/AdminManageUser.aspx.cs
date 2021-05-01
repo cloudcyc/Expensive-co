@@ -30,8 +30,8 @@ namespace Expensive_co.Development
                 html.Append( row["userRole"] + "<br>");
 
                 html.Append("<div class=\"text-center  py-3\">");
-                html.Append("<a class=\"btn btn-success text-white\" href=\"AdminEditUser.aspx\" > Edit</a>");
-                html.Append("<a class=\"btn btn-danger text-white\">Delete</a>");
+                html.Append("<a class=\"btn btn-success text-white\" href=\"AdminEditUser.aspx?userID=" + row["userID"] + "\"> Edit</a>");
+                html.Append("<a class=\"btn btn-danger text-white\"  href=\"DeleteFunction.aspx?userID=" + row["userID"] + "\">Delete</a>");
 
 
                 html.Append("</div>");

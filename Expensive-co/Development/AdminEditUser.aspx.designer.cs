@@ -60,6 +60,15 @@ namespace Expensive_co.Development
         protected global::System.Web.UI.WebControls.TextBox DOB;
 
         /// <summary>
+        /// DropDownList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+
+        /// <summary>
         /// Address control.
         /// </summary>
         /// <remarks>
@@ -85,5 +94,14 @@ namespace Expensive_co.Development
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label InvalidError;
+
+        /// <summary>
+        /// UpdateUserProfileBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UpdateUserProfileBtn;
     }
 }

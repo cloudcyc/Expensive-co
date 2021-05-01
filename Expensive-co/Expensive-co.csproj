@@ -167,7 +167,7 @@
     <Content Include="Development\CusCartPage.aspx" />
     <Content Include="Development\CusEditProfile.aspx" />
     <Content Include="Development\CusOrderHistory.aspx" />
-    <Content Include="Development\DeleteProduct.aspx" />
+    <Content Include="Development\DeleteFunction.aspx" />
     <Content Include="Development\EditProduct.aspx" />
     <Content Include="Development\Home.aspx" />
     <Content Include="Development\Login.aspx" />
@@ -359,12 +359,12 @@
     <Compile Include="Development\CusOrderHistory.aspx.designer.cs">
       <DependentUpon>CusOrderHistory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Development\DeleteProduct.aspx.cs">
-      <DependentUpon>DeleteProduct.aspx</DependentUpon>
+    <Compile Include="Development\DeleteFunction.aspx.cs">
+      <DependentUpon>DeleteFunction.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Development\DeleteProduct.aspx.designer.cs">
-      <DependentUpon>DeleteProduct.aspx</DependentUpon>
+    <Compile Include="Development\DeleteFunction.aspx.designer.cs">
+      <DependentUpon>DeleteFunction.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\EditProduct.aspx.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>

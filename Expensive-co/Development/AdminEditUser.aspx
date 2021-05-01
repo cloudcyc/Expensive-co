@@ -44,6 +44,15 @@
                             </div>
                         </div>
 
+                        <div class="form-group mb-3">
+                            <label for="inputsubject">Role</label>
+                            <asp:DropDownList ID="DropDownList1" runat="server" class="form-control mt-0">
+                                <asp:ListItem Selected="True">Select Role</asp:ListItem>
+                                <asp:ListItem>Admin</asp:ListItem>
+                                <asp:ListItem>Member</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+
                          <div class="mb-3">
                             <label for="inputsubject">Address</label>
                             <asp:TextBox ID="Address" runat="server" name="Address" placeholder="Address" TextMode="MultiLine" class="form-control mt-1"></asp:TextBox>
@@ -58,8 +67,7 @@
                         
                             </div>
                             <div class="col text-end mt-2">
-                                <button type="submit" class="btn btn-success btn-lg px-3">Update User Profile</button>
-                                
+                                <asp:Button ID="UpdateUserProfileBtn" class="btn btn-success btn-lg px-3" runat="server" Text="Update User Profile" OnClick="UpdateUserProfileBtn_Click" />
                             </div>
                         </div>
                     </form>

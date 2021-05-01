@@ -41,7 +41,7 @@ namespace Expensive_co.Development
 
                     html.Append("<div class=\"text-center  py-3\">");
                     html.Append("<a class=\"btn btn-success text-white\" href=\"EditProduct.aspx?productStatus=" + row["productStatus"] + "&productID=" + row["productID"] + "\">Edit</a>");
-                    html.Append("<a class=\"btn btn-danger text-white\" href=\"DeleteProduct.aspx?productImage=" + row["productImage"] + "&productID=" + row["productID"] + "\">Delete</a>");
+                    html.Append("<a class=\"btn btn-danger text-white\" href=\"DeleteFunction.aspx?productImage=" + row["productImage"] + "&productID=" + row["productID"] + "\">Delete</a>");
                     if (row["productStatus"].ToString() == "1")
                     {
                         html.Append("<a class=\"btn btn-success text-white\" href=\"ChangeProductStatus.aspx?productStatus=" + row["productStatus"]+ "&productID=" + row["productID"] + "\"><i class=\"far fa-eye\"></i></a>");

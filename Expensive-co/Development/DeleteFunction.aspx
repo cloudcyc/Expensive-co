@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteProduct.aspx.cs" Inherits="Expensive_co.Development.DeleteProduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteFunction.aspx.cs" Inherits="Expensive_co.Development.DeleteProduct" %>
 
 <!DOCTYPE html>
 

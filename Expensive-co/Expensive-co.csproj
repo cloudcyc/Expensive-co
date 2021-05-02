@@ -162,7 +162,7 @@
     <Content Include="Development\AdminEditProfile.aspx" />
     <Content Include="Development\AdminEditUser.aspx" />
     <Content Include="Development\AdminManageUser.aspx" />
-    <Content Include="Development\AdminViewContact.aspx" />
+    <Content Include="Development\AdminViewFeedback.aspx" />
     <Content Include="Development\AdminViewOrderCart.aspx" />
     <Content Include="Development\ChangeProductStatus.aspx" />
     <Content Include="Development\Contact.aspx" />
@@ -327,12 +327,12 @@
     <Compile Include="Development\AdminManageUser.aspx.designer.cs">
       <DependentUpon>AdminManageUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Development\AdminViewContact.aspx.cs">
-      <DependentUpon>AdminViewContact.aspx</DependentUpon>
+    <Compile Include="Development\AdminViewFeedback.aspx.cs">
+      <DependentUpon>AdminViewFeedback.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Development\AdminViewContact.aspx.designer.cs">
-      <DependentUpon>AdminViewContact.aspx</DependentUpon>
+    <Compile Include="Development\AdminViewFeedback.aspx.designer.cs">
+      <DependentUpon>AdminViewFeedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\AdminViewOrderCart.aspx.cs">
       <DependentUpon>AdminViewOrderCart.aspx</DependentUpon>

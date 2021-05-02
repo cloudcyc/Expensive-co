@@ -15,13 +15,13 @@ namespace Expensive_co.Development
     {
 
         /// <summary>
-        /// FirstName control.
+        /// FullName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FirstName;
+        protected global::System.Web.UI.WebControls.TextBox FullName;
 
         /// <summary>
         /// Email control.
@@ -94,5 +94,14 @@ namespace Expensive_co.Development
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label InvalidError;
+
+        /// <summary>
+        /// EditProfileBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EditProfileBtn;
     }
 }

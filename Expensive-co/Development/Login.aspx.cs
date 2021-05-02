@@ -19,7 +19,13 @@ namespace Expensive_co.Development
 
         protected void LoginBtn_Click(object sender, EventArgs e)
         {
-            
+            string LoginEmail = null;
+            string LoginPassword = null;
+            string LoginUserFullName = null;
+            string LoginUserRole = null;
+            int LoginUserID = 0;
+            int LoginUserPhone = 0;
+
             SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
             SqlCommand cmd = new SqlCommand("select * from Users where userEmail=@username and userPassword=@password", connect);
             
@@ -37,34 +43,38 @@ namespace Expensive_co.Development
             int RowCount = dt.Rows.Count;
             for (int counted = 0; counted < RowCount; counted++)
             {
-                string LoginEmail = dt.Rows[counted]["userEmail"].ToString();
-                string LoginPassword = dt.Rows[counted]["userPassword"].ToString();
-                string LoginUserFullName = dt.Rows[counted]["userFullName"].ToString();
-                int LoginUserID = Convert.ToInt32(dt.Rows[counted]["userID"]);
-                int LoginUserPhone = Convert.ToInt32(dt.Rows[counted]["userContact"]);
+                 LoginEmail = dt.Rows[counted]["userEmail"].ToString();
+                 LoginPassword = dt.Rows[counted]["userPassword"].ToString();
+                 LoginUserFullName = dt.Rows[counted]["userFullName"].ToString();
+                 LoginUserRole = dt.Rows[counted]["userRole"].ToString();
+                 LoginUserID = Convert.ToInt32(dt.Rows[counted]["userID"]);
+                 LoginUserPhone = Convert.ToInt32(dt.Rows[counted]["userContact"]);
 
-                if (LoginEmail == this.Email.Text && LoginPassword == this.Password.Text)
+                
+            }
+            if (LoginEmail != this.Email.Text && LoginPassword != this.Password.Text)
+            {
+                Response.Write("<script>alert('Incorrect Email or Password');</script>");
+                //Response.Redirect("Home.aspx");
+                //this.Invalid.Text = "Incorrect Email or Password";
+            }
+            else
+            {
+                Session["userEmail"] = LoginEmail;
+                Session["userFullName"] = LoginUserFullName;
+                Session["userID"] = LoginUserID;
+                Session["userPhone"] = LoginUserPhone;
+                if (LoginUserRole == "Admin")
                 {
-                    Session["userEmail"] = LoginEmail;
-                    Session["userFullName"] = LoginUserFullName;
-                    Session["userID"] = LoginUserID;
-                    Session["userPhone"] = LoginUserPhone;
-                    if (dt.Rows[counted]["userRole"].ToString() == "Admin")
-                    {
-                        Session["userRole"] = "Admin";
-                        Response.Redirect("AdminDashboard.aspx");
-                    }
-                    else if (dt.Rows[counted]["userRole"].ToString() == "Member")
-                    {
-                        Session["userRole"] = "Member";
-                        Response.Redirect("Home.aspx");
-                    }
+                    Session["userRole"] = "Admin";
+                    Response.Redirect("AdminDashboard.aspx");
                 }
-                else
+                else if (LoginUserRole == "Member")
                 {
-                    //incorrect
-                    //lb1.Text = "Invalid User Name or Password! Please try again!";
+                    Session["userRole"] = "Member";
+                    Response.Redirect("Home.aspx");
                 }
+
             }
         }
 

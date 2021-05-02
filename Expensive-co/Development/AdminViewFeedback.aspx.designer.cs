@@ -11,7 +11,7 @@ namespace Expensive_co.Development
 {
 
 
-    public partial class AdminViewContact
+    public partial class AdminViewFeedback
     {
 
         /// <summary>

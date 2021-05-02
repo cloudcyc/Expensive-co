@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Development/LayoutAdmin.Master" CodeBehind="AdminViewContact.aspx.cs" Inherits="Expensive_co.Development.AdminViewContact" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Development/LayoutAdmin.Master" CodeBehind="AdminViewFeedback.aspx.cs" Inherits="Expensive_co.Development.AdminViewFeedback" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -23,11 +23,10 @@
                                     <thead>
                                         <tr>
                                             <th class="border-top-0">Feedback ID</th>
-                                            <th class="border-top-0">Name</th>
-                                            <th class="border-top-0">Email</th>
-                                            <th class="border-top-0">Subject</th>
-                                            <th class="border-top-0">Message</th>
-                                            <th class="border-top-0">Action</th>
+                                            <th class="border-top-0">Feedback</th>
+                                            <th class="border-top-0">Date</th>
+                                            <th class="border-top-0">Respondent's Name</th>
+                                            <th class="border-top-0">Respondent's Email</th>
                                         </tr>
                                     </thead>
                                     <tbody>

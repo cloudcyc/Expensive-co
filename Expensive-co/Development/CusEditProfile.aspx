@@ -12,7 +12,7 @@
                     <div class="form-group col-md-6 mb-3">
                         <label for="inputname">Full Name</label>
                         
-                        <asp:TextBox ID="FirstName" runat="server" class="form-control mt-1" name="First" placeholder="Full Name"></asp:TextBox>       
+                        <asp:TextBox ID="FullName" runat="server" class="form-control mt-1" name="First" placeholder="Full Name"></asp:TextBox>       
                     </div>
 
                    <div class="form-group col-md-6 mb-3">
@@ -66,7 +66,8 @@
                         
                     </div>
                     <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3">Submit Form</button>
+                        <asp:Button ID="EditProfileBtn" runat="server" Text="Update Profile" class="btn btn-success btn-lg px-3" OnClick="EditProfileBtn_Click"/>
+                        
                     </div>
                 </div>
             </form>

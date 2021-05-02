@@ -19,7 +19,7 @@
             <form id="form1" class="col-md-9 m-auto" runat="server">
                 
                 <div class="mb-3">
-                   <label for="inputsubject">Username</label>
+                   <label for="inputsubject">Email</label>
                    <%--<input type="Email" class="form-control mt-1" id="Email" name="Email" placeholder="Email" runat="server">--%>
                     <asp:TextBox class="form-control mt-1" ID="Email" runat="server" TextMode="Email"></asp:TextBox> 
                 </div>
@@ -31,6 +31,9 @@
                 </div>
                 
                 <div class="row">
+                    <div class="col text-end mt-2">
+                        <asp:Label ID="Invalid" runat="server" Text="Label"></asp:Label>
+                    </div>
                     <div class="col text-end mt-2">
                         <%--<button type="submit" class="btn btn-success btn-lg px-3" onclick="">Login</button>--%>
                         <asp:Button ID="LoginBtn" class="btn btn-success btn-lg px-3" runat="server" Text="Login" OnClick="LoginBtn_Click" />

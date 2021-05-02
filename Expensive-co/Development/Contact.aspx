@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Development/Layout.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="Expensive_co.Development.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Development/Layout.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="Expensive_co.Development.Contact" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -8,7 +8,7 @@
         <div class="col-md-6 m-auto text-center">
             <h1 class="h1">Contact Us</h1>
             <p>
-                Feel Free To Contact Us
+                Feel Free To Give Us A Feedback
             </p>
         </div>
     </div>
@@ -23,28 +23,29 @@
     <!-- Start Contact -->
     <div class="container py-5">
         <div class="row py-5">
-            <form class="col-md-9 m-auto" method="post" role="form">
+            <form class="col-md-9 m-auto" runat="server">
                 <div class="row">
                     <div class="form-group col-md-6 mb-3">
                         <label for="inputname">Name</label>
-                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Name">
+                        <asp:TextBox ID="name" runat="server" class="form-control mt-1"></asp:TextBox>
+                        
                     </div>
                     <div class="form-group col-md-6 mb-3">
                         <label for="inputemail">Email</label>
-                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Email">
+                        <asp:TextBox ID="email" runat="server" class="form-control mt-1" TextMode="Email"></asp:TextBox>
+                        
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputsubject">Subject</label>
-                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Subject">
+                    <label for="inputsubject">Feedback</label>
+                    <asp:TextBox ID="Feedback" runat="server" TextMode="MultiLine" style="resize:none;" class="form-control mt-1" Rows="5"></asp:TextBox>
+                    
                 </div>
-                <div class="mb-3">
-                    <label for="inputmessage">Message</label>
-                    <textarea class="form-control mt-1" id="message" name="message" placeholder="Message" rows="8"></textarea>
-                </div>
+                
                 <div class="row">
                     <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3">Submit Form</button>
+                        <asp:Button ID="FeedbackBtn" runat="server" Text="Submit Feedback" class="btn btn-success btn-lg px-3" OnClick="FeedbackBtn_Click" />
+                        
                     </div>
                 </div>
             </form>

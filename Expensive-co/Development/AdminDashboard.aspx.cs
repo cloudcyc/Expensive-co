@@ -41,7 +41,9 @@ namespace Expensive_co.Development
                 html.Append("<td>" + row["userID"] + "</td>");
                 html.Append("<td>" + row["totalPrice"] + "</td>");
                 html.Append("<td>" + row["orderDate"] + "</td>");
-               
+                html.Append("<td>");
+                    html.Append("<a class=\"btn btn-success text-white\" href=\"AdminViewOrderCart.aspx?cart_ID=" + row["cartID"] + "\">View Cart</a>");
+                html.Append("</td>");
                 html.Append("</tr>");
 
             }

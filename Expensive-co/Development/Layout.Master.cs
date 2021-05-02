@@ -31,38 +31,19 @@ namespace Expensive_co.Development
                 html.Append("Logout");
                 html.Append("</a>");
 
-                //html.Append("<h2>Admin</h2>");
-                //Navgiation to Admin Dashboard and logout btn***
-
-                //Login button change to Account button which return to dashboard for Admin
-                //this.btn1.HRef = "AdminDashboard.aspx";
-                //this.LoginAccount_btn_Label.Text = "Return Dashboard";
-
-                ////Register button change to Logout button
-                //this.btn2.HRef = "Logout.aspx";
-                //this.RegisterLogout_btn_Label.Text = "Logout";
+            
 
             }
             else if (Session["userEmail"] != null && Session["userRole"] == "Member")
             {
-                //profile, cart, order
-                //<div class="dropdown">
-                //      <a class="dropdown-toggle" href="CusEditProfile.aspx" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                //        Profile
-                //      </a>
-
-                //      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                //        <li><a class="dropdown-item" href="#">Action</a></li>
-                //        <li><a class="dropdown-item" href="#">Another action</a></li>
-                //        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                //      </ul>
-                //    </div>
+                
 
                 
 
                 html.Append("<div class=\"dropdown\">");
-                html.Append("<a class=\"dropdown-toggle\" href=\"CusEditProfile.aspx\" role=\"button\" id=\"dropdownMenuLink\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Profile</a>");
+                html.Append("<a class=\"dropdown-toggle\" href=\"CusEditProfile.aspx\" role=\"button\" id=\"dropdownMenuLink\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">"+ Session["userFullName"].ToString() +"</a>");
                 html.Append("<ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">");
+                html.Append("<li><a class=\"dropdown-item\" href=\"CusEditProfile.aspx\">Profile</a></li>");
                 html.Append("<li><a class=\"dropdown-item\" href=\"CusCartPage.aspx\">View Cart</a></li>");
                 html.Append("<li><a class=\"dropdown-item\" href=\"CusOrderHistory.aspx\">Order History</a></li>");
                 html.Append("</ul>");

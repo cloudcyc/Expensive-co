@@ -27,7 +27,6 @@
                                             <th class="border-top-0">Product Price</th>
                                             <th class="border-top-0">Qauntity</th>
                                             <th class="border-top-0">Description</th>
-                                            <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -35,6 +34,17 @@
                                         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
 
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                          <td></td>
+                                          <td>Total Amount:</td>
+                                          <td>RM <asp:Label ID="TotalAmount" runat="server" Text="TotalAmount"></asp:Label></td>
+                                          <td></td>
+                                          <td></td>
+                                          
+                                            
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>

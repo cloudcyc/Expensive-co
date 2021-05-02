@@ -31,7 +31,17 @@
                                     <tbody>
                                         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
                                     </tbody>
-                                   
+                                   <tfoot>
+                                        <tr>
+                                          <td></td>
+                                          <td>Total Amount:</td>
+                                          <td>RM <asp:Label ID="TotalAmount" runat="server" Text="TotalAmount"></asp:Label></td>
+                                          <td></td>
+                                          <td></td>
+                                          
+                                            
+                                        </tr>
+                                    </tfoot>
 
                                     
 

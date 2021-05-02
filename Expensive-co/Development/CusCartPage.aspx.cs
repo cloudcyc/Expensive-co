@@ -92,7 +92,7 @@ namespace Expensive_co.Development
                 CheckOutCommand.Parameters.AddWithValue("@totalPrice", this.TotalAmount.Text);
                 CheckOutCommand.Parameters.AddWithValue("@userID", Convert.ToInt32(Session["userID"]));
                 CheckOutCommand.Parameters.AddWithValue("@orderStatus", "Packing");
-                CheckOutCommand.Parameters.AddWithValue("@orderDate", currentTime.ToString("yyyy-MM-dd hh:mm"));
+                CheckOutCommand.Parameters.AddWithValue("@orderDate", currentTime.ToString("yyyy-MM-dd hh:mm tt"));
 
                 String UpdateCartQuery = "Update Carts SET cartStatus = @cartStatus WHERE cartID=@cartID";
                 SqlCommand UpdateCartCommand = new SqlCommand(UpdateCartQuery, connect);

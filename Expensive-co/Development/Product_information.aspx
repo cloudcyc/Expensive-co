@@ -29,7 +29,7 @@
                                     <h6>Brand:</h6>
                                 </li>
                                 
-                                    <asp:Label ID="Label3" runat="server" Text="Label" class="text-muted"></asp:Label>
+                                    <asp:Label ID="Label3" runat="server" Text="Label" class="font-weight-normal"></asp:Label>
                                     <%--<p class="text-muted"><strong>LV</strong></p>--%>
                                
                             </ul>

@@ -24,7 +24,7 @@ namespace Expensive_co.Development
                 {
                     
                     html.Append("<div class=\"col-md-6 col-lg-3 pb-5\">");
-                    html.Append("<div class=\"card mb-4 product-wap rounded-0\">");
+                    html.Append("<div class=\"card mb-4 h-100 product-wap rounded-0\">");
 
                     if (row["productImage"].ToString() == "") {
                         html.Append("<img class=\"card-img rounded-0\" src=\"../Assets/img/NoProductImage.png\">");

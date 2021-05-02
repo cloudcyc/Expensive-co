@@ -39,8 +39,8 @@ namespace Expensive_co.Development
                 
                 foreach (DataRow rowInCart in SelectedProductInCartDT.Rows)
                 {
-                    html.Append("<td>");
-                        html.Append("<img class=\"col-md-6 col-lg-3 pb-5\" src =\"../Assets/productImg/" + rowInCart["productImage"] + "\">");
+                    html.Append("<td class=\"w-25\">");
+                        html.Append("<img class=\"col-md-6 pb-5\" src =\"../Assets/productImg/" + rowInCart["productImage"] + "\">");
                     html.Append("</td>");
                     html.Append("<td>" + rowInCart["productName"] + "</td>");
                 }

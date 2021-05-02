@@ -27,6 +27,7 @@
                                             <th class="border-top-0">Product Price</th>
                                             <th class="border-top-0">Qauntity</th>
                                             <th class="border-top-0">Description</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>

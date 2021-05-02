@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text;
 
 namespace Expensive_co.Development
 {
@@ -26,6 +27,25 @@ namespace Expensive_co.Development
             //displaying the total Product
             DataTable ProductTable = this.GetProductData();
             this.TotalProductCount.Text = ProductTable.Rows.Count.ToString();
+
+
+            DataTable dt = GetData();
+            StringBuilder html = new StringBuilder();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                html.Append("<tr>");
+
+                html.Append("<td>" + row["orderID"] + "</td>");
+                html.Append("<td>" + row["cartID"] + "</td>");
+                html.Append("<td>" + row["userID"] + "</td>");
+                html.Append("<td>" + row["totalPrice"] + "</td>");
+                html.Append("<td>" + row["orderDate"] + "</td>");
+               
+                html.Append("</tr>");
+
+            }
+            PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
 
         }
 
@@ -84,5 +104,24 @@ namespace Expensive_co.Development
                 }
             }
         }
+
+        private DataTable GetData()
+        {
+            SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Orders", connect);
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter())
+                {
+                    cmd.Connection = connect;
+                    sda.SelectCommand = cmd;
+                    using (DataTable getOrderTable = new DataTable())
+                    {
+                        sda.Fill(getOrderTable);
+                        return getOrderTable;
+                    }
+                }
+            }
+        }
+
     }
 }

@@ -29,7 +29,7 @@ namespace Expensive_co.Development
                 html.Append("<td>" + row["orderStatus"] + "</td>");
                 html.Append("<td>" + row["orderDate"] + "</td>");
                 html.Append("<td>");
-                    html.Append("<a class=\"btn btn-danger text-white\" href=\"?cart_ID=" + row["cartID"] + "\">View Cart</a>");
+                    html.Append("<a class=\"btn btn-success text-white\" href=\"CusOrderViewCart?cart_ID=" + row["cartID"] + "\">View Cart</a>");
                 html.Append("</td>");
 
                 html.Append("</tr>");

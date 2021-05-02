@@ -162,11 +162,14 @@
     <Content Include="Development\AdminEditProfile.aspx" />
     <Content Include="Development\AdminEditUser.aspx" />
     <Content Include="Development\AdminManageUser.aspx" />
+    <Content Include="Development\AdminViewContact.aspx" />
+    <Content Include="Development\AdminViewOrderCart.aspx" />
     <Content Include="Development\ChangeProductStatus.aspx" />
     <Content Include="Development\Contact.aspx" />
     <Content Include="Development\CusCartPage.aspx" />
     <Content Include="Development\CusEditProfile.aspx" />
     <Content Include="Development\CusOrderHistory.aspx" />
+    <Content Include="Development\CusOrderViewCart.aspx" />
     <Content Include="Development\DeleteFunction.aspx" />
     <Content Include="Development\EditProduct.aspx" />
     <Content Include="Development\Home.aspx" />
@@ -324,6 +327,20 @@
     <Compile Include="Development\AdminManageUser.aspx.designer.cs">
       <DependentUpon>AdminManageUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Development\AdminViewContact.aspx.cs">
+      <DependentUpon>AdminViewContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\AdminViewContact.aspx.designer.cs">
+      <DependentUpon>AdminViewContact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\AdminViewOrderCart.aspx.cs">
+      <DependentUpon>AdminViewOrderCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\AdminViewOrderCart.aspx.designer.cs">
+      <DependentUpon>AdminViewOrderCart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Development\ChangeProductStatus.aspx.cs">
       <DependentUpon>ChangeProductStatus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -358,6 +375,13 @@
     </Compile>
     <Compile Include="Development\CusOrderHistory.aspx.designer.cs">
       <DependentUpon>CusOrderHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\CusOrderViewCart.aspx.cs">
+      <DependentUpon>CusOrderViewCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\CusOrderViewCart.aspx.designer.cs">
+      <DependentUpon>CusOrderViewCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\DeleteFunction.aspx.cs">
       <DependentUpon>DeleteFunction.aspx</DependentUpon>

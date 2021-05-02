@@ -68,8 +68,36 @@
                             <div class="d-md-flex mb-3">
                                 <h3 class="box-title mb-0">Recent sales</h3>
                             </div>
+                                <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="white-box">
+                                            <div class="table-responsive">
+                                                <table class="table text-nowrap">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="border-top-0">Order ID</th>
+                                                            <th class="border-top-0">Cart ID</th>
+                                                            <th class="border-top-0">User ID</th>
+                                                            <th class="border-top-0">Total Sales</th>
+                                                            <th class="border-top-0">Checked Out Date</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                        
+
             </div>
 
             </div>

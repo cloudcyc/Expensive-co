@@ -14,6 +14,7 @@ namespace Expensive_co.Development
 {
     public partial class Shops : System.Web.UI.Page
     {
+        SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -51,20 +52,45 @@ namespace Expensive_co.Development
         }
         private DataTable GetData()
         {
-            SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Products WHERE productStatus=1", connect);
+            if (Request.QueryString["searchName"] == null)
             {
-                using (SqlDataAdapter sda = new SqlDataAdapter())
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Products WHERE productStatus=1", connect);
                 {
-                    cmd.Connection = connect;
-                    sda.SelectCommand = cmd;
-                    using (DataTable dt = new DataTable())
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
-                        sda.Fill(dt);
-                        return dt;
+                        cmd.Connection = connect;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
                     }
                 }
             }
+            else
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Products WHERE productStatus=1 AND productName LIKE '"+ Request.QueryString["searchName"].ToString() + "%'", connect);
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = connect;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+
+                
+            
         }
+        protected void SearchBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Shops.aspx?searchName=" + this.Searchbar.Text);
+        }   
     }
 }

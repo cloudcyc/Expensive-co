@@ -13,6 +13,7 @@ namespace Expensive_co.Development
 {
     public partial class AdminManageUser : System.Web.UI.Page
     {
+        SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable dt = GetData();
@@ -45,20 +46,46 @@ namespace Expensive_co.Development
 
         private DataTable GetData()
         {
-            SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE NOT userID=" + Convert.ToInt32(Session["userID"]), connect);
+            if (Request.QueryString["searchName"] == null)
             {
-                using (SqlDataAdapter sda = new SqlDataAdapter())
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE NOT userID=" + Convert.ToInt32(Session["userID"]), connect);
                 {
-                    cmd.Connection = connect;
-                    sda.SelectCommand = cmd;
-                    using (DataTable dt = new DataTable())
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
-                        sda.Fill(dt);
-                        return dt;
+                        cmd.Connection = connect;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
                     }
                 }
             }
+            else
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE NOT userID=" + Convert.ToInt32(Session["userID"]) + "AND userFullName LIKE '" + Request.QueryString["searchName"].ToString() +"%'", connect);
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = connect;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            return dt;
+                        }
+                    }
+                }
+            }
+            
+            
+
+        }
+       
+        protected void SearchBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminManageUser.aspx?searchName="+ this.Searchbar.Text);
         }
     }
 }

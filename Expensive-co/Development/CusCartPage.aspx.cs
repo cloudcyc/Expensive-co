@@ -18,6 +18,7 @@ namespace Expensive_co.Development
         {
             if (Session["userRole"] == null || Session["userRole"] == "Admin")
             {
+                Response.Write("<script>alert('Are you lost?');</script>");
                 Response.Redirect("Home.aspx");
             }
 

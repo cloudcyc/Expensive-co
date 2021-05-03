@@ -15,6 +15,11 @@ namespace Expensive_co.Development
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userRole"] == null || Session["userRole"] == "Admin")
+            {
+                Response.Write("<script>alert('Are you lost?');</script>");
+                Response.Redirect("Home.aspx");
+            }
             DataTable dt = GetData();
             StringBuilder html = new StringBuilder();
 

@@ -75,6 +75,11 @@ namespace Expensive_co.Development
                 Response.Write("<script>alert('Removed Successfully');</script>");
                 Response.Redirect("SalesHistory.aspx");
             }
+            else
+            {
+                Response.Write("<script>alert('No no no, dont you dare come here alone');</script>");
+                Response.Redirect("Home.aspx");
+            }
             
         }
     }

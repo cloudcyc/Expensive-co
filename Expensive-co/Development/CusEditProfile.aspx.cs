@@ -17,6 +17,12 @@ namespace Expensive_co.Development
         int userID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userRole"] == null || Session["userRole"] == "Admin")
+            {
+                Response.Write("<script>alert('Are you lost?');</script>");
+                Response.Redirect("Home.aspx");
+            }
+
             if (!IsPostBack)
             {
                 userID = Convert.ToInt32(Session["userID"]);

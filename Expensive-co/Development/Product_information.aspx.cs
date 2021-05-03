@@ -78,14 +78,16 @@ namespace Expensive_co.Development
             int cartNum = 1;
             if (Session["userRole"] == "Admin")
             {
+                Response.Write("<script>alert('Are you lost? Come let me take you somewhere safe.');</script>");
                 Response.Redirect("AdminDashboard.aspx");
                 //Error message for you are an Admin
 
             }
             else if (Session["userRole"] == null)
             {
+                Response.Write("<script>alert('Please Login to add to cart.');</script>");
                 Response.Redirect("Login.aspx");
-                //Error message for you are an Admin
+                //Error message for you are an non user
             }
             else if (Session["userRole"] == "Member")
             {
@@ -125,6 +127,7 @@ namespace Expensive_co.Development
                 {
                     if (this.DropDownList1.SelectedIndex == 0)
                     {
+                        Response.Write("<script>alert('Choose a size!');</script>");
                         //message box choose a Size
                         return;
 
@@ -139,6 +142,7 @@ namespace Expensive_co.Development
                 {
                     if (this.DropDownList2.SelectedIndex == 0)
                     {
+                        Response.Write("<script>alert('Choose a size!');</script>");
                         //message box choose a Size
                         return;
 
@@ -152,6 +156,7 @@ namespace Expensive_co.Development
                 AddCartCommand.ExecuteNonQuery();
                 connect.Close();
                 //Finish go to cart
+                Response.Write("<script>alert('Item added, come let check that baby out.');</script>");
                 Response.Redirect("CusCartPage.aspx");
             }
         }

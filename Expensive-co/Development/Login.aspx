@@ -31,8 +31,8 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col text-end mt-2">
-                        <asp:Label ID="Invalid" runat="server" Text="Label"></asp:Label>
+                    <div class="col text-start mt-2">
+                        <asp:Label ID="Invalid"  class="alert alert-danger" runat="server" Text="Label"></asp:Label>
                     </div>
                     <div class="col text-end mt-2">
                         <%--<button type="submit" class="btn btn-success btn-lg px-3" onclick="">Login</button>--%>

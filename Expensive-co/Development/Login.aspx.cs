@@ -14,7 +14,7 @@ namespace Expensive_co.Development
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        
+            Invalid.Visible = false;
         }
 
         protected void LoginBtn_Click(object sender, EventArgs e)
@@ -55,8 +55,8 @@ namespace Expensive_co.Development
             if (LoginEmail != this.Email.Text && LoginPassword != this.Password.Text)
             {
                 Response.Write("<script>alert('Incorrect Email or Password');</script>");
-                //Response.Redirect("Home.aspx");
-                //this.Invalid.Text = "Incorrect Email or Password";
+                Invalid.Text = "Incorrect Email or Password";
+                Invalid.Visible = true;
             }
             else
             {

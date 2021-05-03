@@ -28,7 +28,7 @@
 
                                 <div class="form-group col-md-6 mb-3">
                                     <label for="inputemail">Product Price (RM):</label>                        
-                                    <asp:TextBox ID="productprice" runat="server" class="form-control mt-1" name="productprice" placeholder="Product Price"></asp:TextBox>
+                                    <asp:TextBox ID="productprice" runat="server" class="form-control mt-1" name="productprice" placeholder="Product Price" TextMode="Number"></asp:TextBox>
                                 </div>
 
                             </div>
@@ -41,6 +41,7 @@
                                     <asp:ListItem>LV</asp:ListItem>
                                     <asp:ListItem>ADLV</asp:ListItem>
                                     <asp:ListItem>Supreme</asp:ListItem>
+                                    <asp:ListItem>Adidas</asp:ListItem>
                                 </asp:DropDownList>
                          
                             </div>

@@ -42,14 +42,14 @@ namespace Expensive_co.Development
                 connect.Open();
                 int result = registerQuery.ExecuteNonQuery();
                 connect.Close();
-                if (result < 0)
-                {
-                    Console.WriteLine("Error inserting data into Database!");
-                }
-                else
-                {
-                    Response.Redirect("Login.aspx");
-                }
+
+                Response.Write("<script>alert('Register Successfully');</script>");
+                Response.Redirect("Login.aspx");
+
+            }
+            else
+            {
+                Response.Write("<script>alert('"+ this.InvalidError.Text +"');</script>");
             }
  
         }
@@ -98,7 +98,7 @@ namespace Expensive_co.Development
                 }
                 else
                 {
-                    this.InvalidError.Text = "Password does not meet the requirement. At least 1 Upper and 1 Lower case, 1 Number, and 1 Special Character";
+                    this.InvalidError.Text = "Did you meet the requirement? Phone Number only number | Password need to be 6~20 character, least 1 Upper and 1 Lower case, 1 Number, and 1 Special Character";
                     return false;
                 }
             }

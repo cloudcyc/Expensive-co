@@ -68,8 +68,13 @@ namespace Expensive_co.Development
                 UpdateProfileCommand.ExecuteNonQuery();
                 connect.Close();
 
+                Response.Write("<script>alert('Update Successfully');</script>");
                 Response.Redirect("AdminEditProfile.aspx");
 
+            }
+            else
+            {
+                Response.Write("<script>alert('" + this.InvalidError.Text + "');</script>");
             }
         }
 
@@ -128,7 +133,7 @@ namespace Expensive_co.Development
                 }
                 else
                 {
-                    this.InvalidError.Text = "Password does not meet the requirement. At least 1 Upper and 1 Lower case, 1 Number, and 1 Special Character";
+                    this.InvalidError.Text = "Did you meet the requirement? Phone Number only number | Password need to be 6~20 character, least 1 Upper and 1 Lower case, 1 Number, and 1 Special Character";
                     return false;
                 }
             }

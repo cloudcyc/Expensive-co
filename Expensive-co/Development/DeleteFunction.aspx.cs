@@ -35,7 +35,9 @@ namespace Expensive_co.Development
                 connect.Open();
                 DeleteCommand.ExecuteNonQuery();
                 connect.Close();
+                Response.Write("<script>alert('Removed Successfully');</script>");
                 Response.Redirect("ProductList.aspx");
+                
             }
             //if user_ID is not 0, run delete user
             else if (user_ID != 0)
@@ -46,7 +48,9 @@ namespace Expensive_co.Development
                 connect.Open();
                 DeleteCommand.ExecuteNonQuery();
                 connect.Close();
+                Response.Write("<script>alert('Removed Successfully');</script>");
                 Response.Redirect("AdminManageUser.aspx"); 
+
             }
             else if (inCartproduct_ID != 0)
             {
@@ -56,6 +60,7 @@ namespace Expensive_co.Development
                 connect.Open();
                 DeleteCommand.ExecuteNonQuery();
                 connect.Close();
+                Response.Write("<script>alert('Removed Successfully');</script>");
                 Response.Redirect("CusCartPage.aspx");
             }
             else if (order_ID != 0)
@@ -67,6 +72,7 @@ namespace Expensive_co.Development
                 DeleteCommand.ExecuteNonQuery();
                 DeleteCommand2.ExecuteNonQuery();
                 connect.Close();
+                Response.Write("<script>alert('Removed Successfully');</script>");
                 Response.Redirect("SalesHistory.aspx");
             }
             

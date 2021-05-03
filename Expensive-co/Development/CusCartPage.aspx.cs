@@ -16,6 +16,10 @@ namespace Expensive_co.Development
         SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userRole"] == null || Session["userRole"] == "Admin")
+            {
+                Response.Redirect("Home.aspx");
+            }
 
             DataTable dt = GetData();
             StringBuilder html = new StringBuilder();
@@ -107,7 +111,7 @@ namespace Expensive_co.Development
             }
             else
             {
-                //Error message
+                Response.Write("<script>alert('Please add some item to check out.');</script>");
             }
             
         }

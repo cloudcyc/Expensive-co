@@ -46,15 +46,15 @@ namespace Expensive_co.Development
                 connect.Open();
                 int result = addUserQuery.ExecuteNonQuery();
                 connect.Close();
-                if (result < 0)
-                {
-                    Console.WriteLine("Error inserting data into Database!");
-                }
-                else
-                {
-                    Response.Redirect("AdminManageUser.aspx");
-                }
+                Response.Write("<script>alert('Added Successfully');</script>");
+                Response.Redirect("Add User.aspx");
+
             }
+            else
+            {
+                Response.Write("<script>alert('" + this.InvalidError.Text + "');</script>");
+            }
+        
         }
 
         public bool validationFunction(string Fullname, string Email, string PhoneNumber, string Password, string ConfirmPassword, string DOB)

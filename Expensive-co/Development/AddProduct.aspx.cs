@@ -20,22 +20,33 @@ namespace Expensive_co.Development
         protected void AddProductBtn_Click(object sender, EventArgs e)
         {
             string file_name = productimage.FileName.ToString();
-            SqlCommand addProductCommand = new SqlCommand("INSERT INTO Products (productName, productDescription, productPrice, productBrand, productCategory, productStatus, productImage) VALUES(@productName, @productDescription, @productPrice, @productBrand, @productCategory,@productStatus, '"+file_name+"')", connect);
+            if (file_name == null )
+            {
+                SqlCommand addProductCommand = new SqlCommand("INSERT INTO Products (productName, productDescription, productPrice, productBrand, productCategory, productStatus, productImage) VALUES(@productName, @productDescription, @productPrice, @productBrand, @productCategory,@productStatus, '" + file_name + "')", connect);
 
-            productimage.PostedFile.SaveAs(Server.MapPath("../Assets/productImg/") + file_name);
+                productimage.PostedFile.SaveAs(Server.MapPath("../Assets/productImg/") + file_name);
 
-            addProductCommand.Parameters.AddWithValue("@productName", productname.Text);
-            addProductCommand.Parameters.AddWithValue("@productDescription", productdescription.Text);
-            addProductCommand.Parameters.AddWithValue("@productPrice", productprice.Text);
-            addProductCommand.Parameters.AddWithValue("@productBrand", productbrand.Text);
-            addProductCommand.Parameters.AddWithValue("@productCategory", productcategories.Text);
-            addProductCommand.Parameters.AddWithValue("@productStatus", "1");
+                addProductCommand.Parameters.AddWithValue("@productName", productname.Text);
+                addProductCommand.Parameters.AddWithValue("@productDescription", productdescription.Text);
+                addProductCommand.Parameters.AddWithValue("@productPrice", productprice.Text);
+                addProductCommand.Parameters.AddWithValue("@productBrand", productbrand.Text);
+                addProductCommand.Parameters.AddWithValue("@productCategory", productcategories.Text);
+                addProductCommand.Parameters.AddWithValue("@productStatus", "1");
+
+                connect.Open();
+                int result = addProductCommand.ExecuteNonQuery();
+                connect.Close();
+
+                Response.Write("<script>alert('Added Successfully');</script>");
+                Response.Redirect("ProductList.aspx");
+            }
+            else
+            {
+                InvalidPanel.Visible = true;
+                InvalidError.Text = "Fill in all the requirement";
+                Response.Write("<script>alert('Fill in all the requirement');</script>");
+            }
             
-
-            connect.Open();
-            int result = addProductCommand.ExecuteNonQuery();
-            connect.Close();
-            Response.Redirect("ProductList.aspx");
         }
     }
 }

@@ -41,6 +41,7 @@
                                     <asp:ListItem>LV</asp:ListItem>
                                     <asp:ListItem>ADLV</asp:ListItem>
                                     <asp:ListItem>Supreme</asp:ListItem>
+                                    <asp:ListItem>Adidas</asp:ListItem>
                                 </asp:DropDownList>
                          
                             </div>
@@ -48,7 +49,7 @@
                             <div class="mb-3">
                                 <label for="inputsubject">Product Image:</label>
                                 <asp:FileUpload ID="productimage" runat="server" />
-                                <asp:Image ID="currentproductImage" Class="card-img rounded-0" runat="server" />
+                                <asp:Image ID="currentproductImage" Class="card-img rounded-0 h-50" runat="server" />
                             </div>
 
                             <div class="mb-3">

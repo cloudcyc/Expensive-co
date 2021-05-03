@@ -21,7 +21,7 @@ namespace Expensive_co.Development
             
             if (Request.QueryString["productID"] == null)
             {
-                Response.Redirect("Shops.aspx");
+                Response.Redirect("ProductList.aspx");
             }
             else
             {
@@ -92,6 +92,7 @@ namespace Expensive_co.Development
             connect.Open();
             UpdateProductCommand.ExecuteNonQuery();
             connect.Close();
+            Response.Write("<script>alert('Added Successfully');</script>");
             Response.Redirect("ProductList.aspx");
         }
     }

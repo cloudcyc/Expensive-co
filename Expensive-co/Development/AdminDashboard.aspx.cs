@@ -39,7 +39,7 @@ namespace Expensive_co.Development
                 html.Append("<td>" + row["orderID"] + "</td>");
                 html.Append("<td>" + row["cartID"] + "</td>");
                 html.Append("<td>" + row["userID"] + "</td>");
-                html.Append("<td>" + row["totalPrice"] + "</td>");
+                html.Append("<td>RM " + row["totalPrice"] + "</td>");
                 html.Append("<td>" + row["orderDate"] + "</td>");
                 html.Append("<td>");
                     html.Append("<a class=\"btn btn-success text-white\" href=\"AdminViewOrderCart.aspx?cart_ID=" + row["cartID"] + "\">View Cart</a>");
@@ -110,7 +110,7 @@ namespace Expensive_co.Development
         private DataTable GetData()
         {
             SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Orders", connect);
+            SqlCommand cmd = new SqlCommand("SELECT TOP 5 * FROM Orders ORDER BY orderID DESC", connect);
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {

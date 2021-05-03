@@ -107,9 +107,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="App_Data\ExpensiveDB.mdf" />
-    <Content Include="App_Data\ExpensiveDB_log.ldf">
-      <DependentUpon>ExpensiveDB.mdf</DependentUpon>
-    </Content>
+    <Content Include="App_Data\ExpensiveDB_log.ldf" />
     <Content Include="Assets\Bootstrap\css\bootstrap.min.css" />
     <Content Include="Assets\Bootstrap\css\fontawesome.css" />
     <Content Include="Assets\Bootstrap\css\fontawesome.min.css" />

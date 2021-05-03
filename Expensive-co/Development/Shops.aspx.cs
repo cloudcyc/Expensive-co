@@ -28,11 +28,11 @@ namespace Expensive_co.Development
                             html.Append("<div class=\"card mb-4 h-100 product-wap rounded-0\">");
                             if (row["productImage"].ToString() == "")
                             {
-                                html.Append("<img class=\"card-img rounded-0\" src=\"../Assets/img/NoProductImage.png\">");
+                                html.Append("<img class=\"card-img rounded-0 h-100\" src=\"../Assets/img/NoProductImage.png\">");
                             }
                             else
                             {
-                                html.Append("<img class=\"card-img rounded-0\" src =\"../Assets/productImg/" + row["productImage"] + "\" >");
+                                html.Append("<img class=\"card-img rounded-0 h-100\" src =\"../Assets/productImg/" + row["productImage"] + "\" >");
                             }
                             html.Append("<div class=\"card-body\">");
 

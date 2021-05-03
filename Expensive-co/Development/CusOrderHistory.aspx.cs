@@ -25,7 +25,7 @@ namespace Expensive_co.Development
 
                 html.Append("<td>" + row["orderID"] + "</td>");
                 html.Append("<td>" + row["cartID"] + "</td>");
-                html.Append("<td>" + row["totalPrice"] + "</td>");
+                html.Append("<td>RM " + row["totalPrice"] + "</td>");
                 html.Append("<td>" + row["orderStatus"] + "</td>");
                 html.Append("<td>" + row["orderDate"] + "</td>");
                 html.Append("<td>");
@@ -41,7 +41,7 @@ namespace Expensive_co.Development
         private DataTable GetData()
         {
             SqlConnection connect = new SqlConnection(ConfigurationManager.ConnectionStrings["ExpensiveDBConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Orders WHERE userID=" + Convert.ToInt32(Session["userID"]), connect);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Orders WHERE userID=" + Convert.ToInt32(Session["userID"]) + " ORDER BY orderID DESC", connect);
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {

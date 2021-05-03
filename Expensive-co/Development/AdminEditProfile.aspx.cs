@@ -62,6 +62,7 @@ namespace Expensive_co.Development
                 UpdateProfileCommand.Parameters.AddWithValue("@userRole", Session["userRole"].ToString());
                 UpdateProfileCommand.Parameters.AddWithValue("@userDOB", this.DOB.Text);
                 UpdateProfileCommand.Parameters.AddWithValue("@userID", userID);
+                Session["userFullName"] = this.FullName.Text;
 
                 connect.Open();
                 UpdateProfileCommand.ExecuteNonQuery();

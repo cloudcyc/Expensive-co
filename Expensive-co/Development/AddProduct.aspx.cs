@@ -20,7 +20,7 @@ namespace Expensive_co.Development
         protected void AddProductBtn_Click(object sender, EventArgs e)
         {
             string file_name = productimage.FileName.ToString();
-            if (file_name == null )
+            if (file_name != null )
             {
                 SqlCommand addProductCommand = new SqlCommand("INSERT INTO Products (productName, productDescription, productPrice, productBrand, productCategory, productStatus, productImage) VALUES(@productName, @productDescription, @productPrice, @productBrand, @productCategory,@productStatus, '" + file_name + "')", connect);
 

@@ -71,7 +71,7 @@
         <!-- Start Script -->
         <script src="../Assets/Bootstrap/js/jquery-1.11.0.min.js"></script>
         <script src="../Assets/Bootstrap/js/jquery-migrate-1.2.1.min.js"></script>
-        <script src="../Assets/Bootstrap/js/bootstrap.bundle.min.js"></script>
+        <%--<script src="../Assets/Bootstrap/js/bootstrap.bundle.min.js"></script>--%>
         <script src="../Assets/Bootstrap/js/templatemo.js"></script>
         <script src="../Assets/Bootstrap/js/custom.js"></script>
         <!-- End Script -->

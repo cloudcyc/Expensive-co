@@ -22,7 +22,7 @@
                     <div class="form-group col-md-6 mb-3">
                         <label for="inputname">Full Name</label>
                         
-                        <asp:TextBox ID="FirstName" runat="server" class="form-control mt-1" name="First" placeholder="Full Name"></asp:TextBox>       
+                        <asp:TextBox ID="FullName" runat="server" class="form-control mt-1" name="First" placeholder="Full Name"></asp:TextBox>       
                     </div>
 
                    <div class="form-group col-md-6 mb-3">

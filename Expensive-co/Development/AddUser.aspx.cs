@@ -23,7 +23,7 @@ namespace Expensive_co.Development
         {
             SqlCommand addUserQuery = new SqlCommand("INSERT INTO Users (userFullName, userEmail, userContact, userPassword, userAddress, userRole, userDOB) VALUES (@userFullName,@userEmail,@userContact,@userPassword,@userAddress,@userRole,@userDOB)", connect);
 
-            bool Validation = validationFunction(this.FullName.Text, this.Email.Text, this.Phone.Text, this.Password.Text, this.ConfirmPassword.Text, this.DOB.Text);
+            bool Validation = GlobalFunction.validationFunction(this.FullName.Text, this.Email.Text, this.Phone.Text, this.Password.Text, this.ConfirmPassword.Text, this.DOB.Text, this.InvalidPanel, this.InvalidError);
 
             if (Validation == true)
             {
@@ -57,7 +57,7 @@ namespace Expensive_co.Development
         
         }
 
-        public bool validationFunction(string Fullname, string Email, string PhoneNumber, string Password, string ConfirmPassword, string DOB)
+        /*public bool validationFunction(string Fullname, string Email, string PhoneNumber, string Password, string ConfirmPassword, string DOB)
         {
             Regex checkNum = new Regex(@"^\d+$"); //Only number
             Regex checkStrongPassword = new Regex(@"^.*(?=.{7,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{6,20}$"); //Atleast 1 upper and lower, 1 number, and special character
@@ -113,6 +113,6 @@ namespace Expensive_co.Development
             }
 
 
-        }
+        }*/
     }
 }

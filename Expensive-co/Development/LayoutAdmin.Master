@@ -21,120 +21,103 @@
     <link rel="stylesheet" href="../Assets/Bootstrap/css/templatemo.css">   
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="../Assets/Bootstrap/css/fontawesome.min.css">
-    <link rel="stylesheet" href="../Assets/Ex-personal.css">
     <link rel="stylesheet" href="../Assets/Bootstrap/css/style.min.css">
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/">
     <link rel="stylesheet" href="../Assets/Bootstrap/css/chartist.min.css">
     <link rel="stylesheet" href="../Assets/Bootstrap/css/chartist-plugin-tooltip.css">
     <link rel="stylesheet" href="../Assets/Bootstrap/css/Button.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../Assets/Bootstrap/Ex-personal.js"></script>
+    <script>
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+</script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px;" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <a class="navbar-brand" href="AdminDashboard.aspx">
+            <!-- Logo icon -->
+            <b class="logo-icon">
+                <!-- Dark Logo icon -->
+                <img src="../Assets/img/logo.png" style="height:80px">
+            </b>
+            <!--End Logo icon -->                        
+        </a>  
+        <a class="w3-bar-item w3-button" href="AdminDashboard.aspx"
+            aria-expanded="false">
+            <i class="far fa-clock" aria-hidden="true"></i>
+            <span class="hide-menu">Dashboard</span>
+        </a>
+        <a class="w3-bar-item w3-button" href="AdminEditProfile.aspx"
+            aria-expanded="false">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span class="hide-menu">Profile</span>
+        </a>
+        <a class="w3-bar-item w3-button" href="AdminManageUser.aspx"
+            aria-expanded="false">
+            <i class="fa fa-table" aria-hidden="true"></i>
+            <span class="hide-menu">Manage User</span>
+        </a>
+        <a class="w3-bar-item w3-button" href="ProductList.aspx"
+            aria-expanded="false">
+            <i class="fa fa-table" aria-hidden="true"></i>
+            <span class="hide-menu">Product List</span>
+        </a>
+        <a class="w3-bar-item w3-button" href="SalesHistory.aspx"
+            aria-expanded="false">
+            <i class="fa fa-table" aria-hidden="true"></i>
+            <span class="hide-menu">Sales History</span>
+        </a>
+        <a class="w3-bar-item w3-button" href="AdminViewFeedback.aspx"
+            aria-expanded="false">
+            <i class="fa fa-table" aria-hidden="true"></i>
+            <span class="hide-menu">Feedback</span>
+        </a>
+        <a class="w3-bar-item w3-button" href="Home.aspx"
+            aria-expanded="false">
+            <i class="fa fa-table" aria-hidden="true"></i>
+            <span class="hide-menu">View Store</span>
+        </a>
+        <a href="Logout.aspx"" class ="btn d-grid btn-danger text-white">Logout</a>
+    </div>
+
+    <div class="w3-main" style="margin-left:250px">
+    <div style="background-color:#292929">
+      <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="color:white">&#9776;</button>
+      <div class="w3-container" style="text-align:right">
+            <Label Class="text-white">Welcome back,</Label> <asp:Label Class="text-white" ID="AdminName" runat="server" Text="Label"></asp:Label> &nbsp; &nbsp;
+      </div>
+    </div>
+
+    
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-
-        <header class="topbar" data-navbarbg="skin5">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <div class="navbar-header" data-logobg="skin6">
-                    <!-- Logo -->
-                    <a class="navbar-brand" href="AdminDashboard.aspx">
-                        <!-- Logo icon -->
-                        <b class="logo-icon">
-                            <!-- Dark Logo icon -->
-                           <img src="../Assets/img/test.png" class="EX-Logo"/>
-                        </b>
-                        <!--End Logo icon -->                        
-                    </a>                    
-                    
-                </div>
-                
-                <!-- End Logo -->
-                
-                <ul class="navbar-nav ms-auto d-flex align-items-center">
-
-                        <!-- User profile-->
-                        <li>
-                            <Label Class="text-white">Welcome back,</Label> <asp:Label Class="text-white" ID="AdminName" runat="server" Text="Label"></asp:Label> &nbsp; &nbsp;
-                        </li>
-                    </ul>
-
-            </nav>
-        </header>
-
-
-        <aside class="left-sidebar" data-sidebarbg="skin6">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <!-- User Profile-->
-                        <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="AdminDashboard.aspx"
-                                aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="AdminEditProfile.aspx"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="AdminManageUser.aspx"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Manage User Account</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="ProductList.aspx"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Product List</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="SalesHistory.aspx"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Sales History</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="AdminViewFeedback.aspx"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Feedback</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Home.aspx"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">View Store</span>
-                            </a>
-                        </li>
-                        <li class="text-center p-20 upgrade-btn">
-                            <a href="Logout.aspx"" class ="btn d-grid btn-danger text-white">Logout</a>
-                        </li>
-                    </ul>
-
-                </nav>
-                <!-- End Sidebar navigation -->
-            </div>
-            <!-- End Sidebar scroll-->
-        </aside>
-        
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     
     </div>
+    
+   
+    </div>
+
+
+        
+                
+        
+
+
+       
+        
+        
 
 
 

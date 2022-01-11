@@ -346,6 +346,7 @@
     <Compile Include="Development\ChangeProductStatus.aspx.designer.cs">
       <DependentUpon>ChangeProductStatus.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Development\GlobalFunction.cs" />
     <Compile Include="Development\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -506,6 +507,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="Assets\productImg\" />
   </ItemGroup>
   <ItemGroup>

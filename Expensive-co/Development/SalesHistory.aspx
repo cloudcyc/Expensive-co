@@ -27,6 +27,7 @@
                                             <th class="border-top-0">User ID</th>
                                             <th class="border-top-0">Total Sales</th>
                                             <th class="border-top-0">Checked Out Date</th>
+                                            <th class="border-top-0">Order Status</th>
                                             <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>

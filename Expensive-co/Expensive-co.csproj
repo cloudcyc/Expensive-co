@@ -162,6 +162,7 @@
     <Content Include="Development\AdminManageUser.aspx" />
     <Content Include="Development\AdminViewFeedback.aspx" />
     <Content Include="Development\AdminViewOrderCart.aspx" />
+    <Content Include="Development\ChangeOrderStatus.aspx" />
     <Content Include="Development\ChangeProductStatus.aspx" />
     <Content Include="Development\Contact.aspx" />
     <Content Include="Development\CusCartPage.aspx" />
@@ -338,6 +339,13 @@
     </Compile>
     <Compile Include="Development\AdminViewOrderCart.aspx.designer.cs">
       <DependentUpon>AdminViewOrderCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Development\ChangeOrderStatus.aspx.cs">
+      <DependentUpon>ChangeOrderStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Development\ChangeOrderStatus.aspx.designer.cs">
+      <DependentUpon>ChangeOrderStatus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Development\ChangeProductStatus.aspx.cs">
       <DependentUpon>ChangeProductStatus.aspx</DependentUpon>

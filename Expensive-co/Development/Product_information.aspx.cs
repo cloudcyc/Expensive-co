@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace Expensive_co.Development
@@ -26,16 +27,41 @@ namespace Expensive_co.Development
             else
             {
                 int product_ID = Convert.ToInt32(Request.QueryString["productID"]);
+                //Item
                 SqlCommand SelectedProductCommand = new SqlCommand("SELECT* FROM Products WHERE productID =" + product_ID, connect);
                 SqlDataAdapter SelectedProductAdapter = new SqlDataAdapter(SelectedProductCommand);
                 DataTable SelectedProductDT = new DataTable();
-                SelectedProductAdapter.Fill(SelectedProductDT);
-                connect.Open();
-                SelectedProductCommand.ExecuteNonQuery();
-                connect.Close();
+
+                //Item Review
+                SqlCommand SelectedProductReviewCommand = new SqlCommand("SELECT* FROM CommentsTable WHERE productID =" + product_ID, connect);
+                SqlDataAdapter SelectedProductReviewAdapter = new SqlDataAdapter(SelectedProductReviewCommand);
+                DataTable SelectedProductReviewDT = new DataTable();
 
                 
+             
+                SelectedProductAdapter.Fill(SelectedProductDT);
+                SelectedProductReviewAdapter.Fill(SelectedProductReviewDT);
+                connect.Open();
+                SelectedProductCommand.ExecuteNonQuery();
+                SelectedProductReviewCommand.ExecuteNonQuery();
+                connect.Close();
 
+                //Check if User brought the item, if yes allow them to comment
+                DataTable SelectedProductBroughtDT = new DataTable();
+                if (Session["userID"] != null)
+                {
+                    SqlCommand SelectedProductBroughtCommand = new SqlCommand("SELECT* FROM Carts WHERE productID = " + product_ID + " AND userID = " + Session["userID"] + " AND cartStatus = 'Checked Out'", connect);
+                    SqlDataAdapter SelectedProductBroughtAdapter = new SqlDataAdapter(SelectedProductReviewCommand);
+                    
+
+                    SelectedProductBroughtAdapter.Fill(SelectedProductBroughtDT);
+                    connect.Open();
+                    SelectedProductBroughtCommand.ExecuteNonQuery();
+                    connect.Close();
+                }
+
+
+                //product display loop
                 foreach (DataRow row in SelectedProductDT.Rows)
                 {
                     
@@ -67,7 +93,87 @@ namespace Expensive_co.Development
                         this.Label5.Visible = false;
                     }
                 }
-                
+                //Review Loop
+                StringBuilder html = new StringBuilder();
+                if (SelectedProductReviewDT.Rows.Count > 0)
+                {
+                    int eachRowNumber = SelectedProductReviewDT.Rows.Count;
+                    
+                    foreach (DataRow row in SelectedProductReviewDT.Rows)
+                    {  
+                        html.Append("<li class=\"list-group-item\"> ");
+                        html.Append("<blockquote class=\"blockquote mb-0\">");
+                        html.Append("<p>" + row["commentDesc"] + "</p>");
+                        SqlCommand SelectedUserCommentCommand = new SqlCommand("SELECT* FROM Users WHERE userID =" + row["userID"], connect);
+                        SqlDataAdapter SelectedUserCommentAdapter = new SqlDataAdapter(SelectedUserCommentCommand);
+                        DataTable SelectedUserCommentDT = new DataTable();
+                        SelectedUserCommentAdapter.Fill(SelectedUserCommentDT);
+                        connect.Open();
+                        SelectedUserCommentCommand.ExecuteNonQuery();
+                        connect.Close();
+                        
+                        foreach (DataRow userRow in SelectedUserCommentDT.Rows)
+                        {
+                            html.Append("<footer class=\"blockquote-footer\">"+ userRow["userFullName"]+"<cite title=\"Source Title\">" +row["commentDate"] + "</cite></footer>");
+                        }
+                        //html.Append("<h5 class=\"card-title\">" + row["userFullName"] + "</h5>");
+                        html.Append("</blockquote>");
+                        html.Append("</li>");
+             
+                    }
+
+                    
+                    if (Session["userID"] == null) 
+                    {
+                        html.Append("<li id=\"reasonLi\" class=\"list-group-item\">");
+                        html.Append("<p>Login to add your review.</p>");
+                        html.Append("</li>");
+                    }
+                    else if (SelectedProductBroughtDT.Rows.Count == 0)
+                    {
+                        html.Append("<li id=\"reasonLi\" class=\"list-group-item\">");
+                        html.Append("<p>Buy to review.</p>");
+                        html.Append("</li>");
+                    }
+                    else if (SelectedProductBroughtDT.Rows.Count > 0)
+                    {
+                        html.Append("<li id=\"commentLi\" class=\"list-group-item\">");
+                        html.Append("<div class=\"row\">");
+                        html.Append("<div class=\"mb-12\">");
+                        html.Append("<textarea id=\"commentTextArea\" class=\"form-control mt-1\" col=\"20\" rows=\"2\"></textarea>");
+                        html.Append("</div>");
+                        html.Append("</div>");
+                        html.Append("<div class=\"row\">");
+                        html.Append("<div class=\"mb-12 text-end\">");
+                        html.Append("<a href=\"#\" class=\"btn btn-primary btn-lg\">Comment</a>");
+                        html.Append("</div>");
+                        html.Append("</div>");
+                        html.Append("</li>");
+                        
+                    }
+                    PlaceHolder2.Controls.Add(new Literal { Text = html.ToString() });
+                }
+                else
+                {
+                    if (Session["userID"] == null)
+                    {
+                        html.Append("<li id=\"reasonLi\" class=\"list-group-item\">");
+                        html.Append("<p>Login to add your review.</p>");
+                        html.Append("</li>");
+                    }
+                    else if (SelectedProductBroughtDT.Rows.Count == 0)
+                    {
+                        html.Append("<li id=\"reasonLi\" class=\"list-group-item\">");
+                        html.Append("<p>Buy it and be the first one to review.</p>");
+                        html.Append("</li>");
+                    }
+
+                    PlaceHolder2.Controls.Add(new Literal { Text = html.ToString() });
+                }
+                    
+                    
+
+
             }
         }
 

@@ -19,10 +19,11 @@ namespace Expensive_co.Development
 
         protected void AddProductBtn_Click(object sender, EventArgs e)
         {
+            DateTime currentTime = DateTime.Now;
             string file_name = productimage.FileName.ToString();
             if (file_name != null )
             {
-                SqlCommand addProductCommand = new SqlCommand("INSERT INTO Products (productName, productDescription, productPrice, productBrand, productCategory, productStatus, productImage) VALUES(@productName, @productDescription, @productPrice, @productBrand, @productCategory,@productStatus, '" + file_name + "')", connect);
+                SqlCommand addProductCommand = new SqlCommand("INSERT INTO Products (productName, productDescription, productPrice, productBrand, productCategory, productStatus, productImage, productDate) VALUES(@productName, @productDescription, @productPrice, @productBrand, @productCategory,@productStatus, '" + file_name + "',@productDate)", connect);
 
                 productimage.PostedFile.SaveAs(Server.MapPath("../Assets/productImg/") + file_name);
 
@@ -32,6 +33,7 @@ namespace Expensive_co.Development
                 addProductCommand.Parameters.AddWithValue("@productBrand", productbrand.Text);
                 addProductCommand.Parameters.AddWithValue("@productCategory", productcategories.Text);
                 addProductCommand.Parameters.AddWithValue("@productStatus", "1");
+                addProductCommand.Parameters.AddWithValue("@productDate", currentTime.ToString("yyyy-MM-dd hh:mm tt"));
 
                 connect.Open();
                 int result = addProductCommand.ExecuteNonQuery();

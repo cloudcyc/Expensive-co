@@ -54,7 +54,7 @@ namespace Expensive_co.Development
         {
             if (Request.QueryString["searchName"] == null)
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Products WHERE productStatus=1", connect);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Products WHERE productStatus=1 ORDER BY productDate DESC", connect);
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
@@ -70,7 +70,7 @@ namespace Expensive_co.Development
             }
             else
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Products WHERE productStatus=1 AND productName LIKE '"+ Request.QueryString["searchName"].ToString() + "%'", connect);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Products WHERE productStatus=1 AND productName LIKE '"+ Request.QueryString["searchName"].ToString() + "%' ORDER BY productDate DESC", connect);
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {

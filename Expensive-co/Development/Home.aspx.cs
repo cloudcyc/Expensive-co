@@ -87,7 +87,7 @@ namespace Expensive_co.Development
         private DataTable GetNewestProduct()
         {
             
-            SqlCommand cmd = new SqlCommand("SELECT TOP 3 * FROM Products WHERE productStatus=1 ORDER BY productID DESC", connect);
+            SqlCommand cmd = new SqlCommand("SELECT TOP 3 * FROM Products WHERE productStatus=1 ORDER BY productDate DESC", connect);
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {

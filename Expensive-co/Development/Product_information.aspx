@@ -100,8 +100,26 @@
                             </form>
 
                         </div>
+                        <!-- comment section -->
+           
                     </div>
+                    
                 </div>
+            </div>
+            <div class="card">
+             <div class="card-body">
+                  <h5 class="card-title">Reviews</h5>
+             </div>
+                <ul class="list-group list-group-flush">
+                    <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
+                     <%--
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item">Dapibus ac facilisis in</li>
+                          <li class="list-group-item">Vestibulum at eros</li>
+                      --%>
+                    
+                    
+                </ul>
             </div>
         </div>
     </section>

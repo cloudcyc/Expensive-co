@@ -45,15 +45,15 @@ namespace Expensive_co.Development
                 foreach (DataRow rowInCart in SelectedProductInCartDT.Rows)
                 {
                     html.Append("<td class=\"w-25\">");
-                        html.Append("<img class=\"col-md-6 pb-5\" src =\"../Assets/productImg/" + rowInCart["productImage"] + "\">");
+                        html.Append("<img class=\"col-sm-6 pb-5\" src =\"../Assets/productImg/" + rowInCart["productImage"] + "\">");
                     html.Append("</td>");
-                    html.Append("<td>" + rowInCart["productName"] + "</td>");
+                    html.Append("<td class=\"col-sm-6\">" + rowInCart["productName"] + "</td>");
                 }
                 
-                html.Append("<td>" + "RM "+ row["productPrice"] + "</td>");
-                html.Append("<td>" + row["productQuantity"] + "</td>");
-                html.Append("<td>" + row["productRequest"] + "</td>");
-                html.Append("<td>");
+                html.Append("<td class=\"col-sm-6\">" + "RM "+ row["productPrice"] + "</td>");
+                html.Append("<td class=\"col-sm-6\">" + row["productQuantity"] + "</td>");
+                html.Append("<td class=\"col-sm-6\">" + row["productRequest"] + "</td>");
+                html.Append("<td class=\"col-sm-6\">");
                 html.Append("<a class=\"btn btn-danger text-white\" href=\"DeleteFunction.aspx?inCartproduct_ID=" + row["productID"] + "&currentCart_ID=" + row["cartID"] + "\">Delete</a>");
                 html.Append("</td>");
 
@@ -108,13 +108,16 @@ namespace Expensive_co.Development
                 CheckOutCommand.ExecuteNonQuery();
                 connect.Close();
 
-                Response.Redirect("CusOrderHistory.aspx");
+                Response.Redirect("SplitPath.aspx");
             }
             else
             {
-                Response.Write("<script>alert('Please add some item to check out.');</script>");
+                Response.Write("<script>");
+                Response.Write("alert('Please add some item to check out.');");
+                Response.Write("</script>");
+
             }
-            
+
         }
     }
 }

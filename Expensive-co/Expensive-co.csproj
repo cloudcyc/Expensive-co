@@ -180,7 +180,6 @@
     <Content Include="Development\Register.aspx" />
     <Content Include="Development\SalesHistory.aspx" />
     <Content Include="Development\Shops.aspx" />
-    <Content Include="Development\SplitPath.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -481,13 +480,6 @@
     </Compile>
     <Compile Include="Development\Shops.aspx.designer.cs">
       <DependentUpon>Shops.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Development\SplitPath.aspx.cs">
-      <DependentUpon>SplitPath.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Development\SplitPath.aspx.designer.cs">
-      <DependentUpon>SplitPath.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -63,11 +63,11 @@
             </div>
 
                 <div class="row">
-                    <form runat=server> 
+                    <form runat=server>
+                        
                         <div class="col text-end mt-2">
                             <asp:Button ID="CheckOutBtn" runat="server" Text="Check Out" class="btn btn-success btn-lg btn-block" OnClick="CheckOutBtn_Click"/>     
                         </div>
-                        
                     </form>
                 </div>
 

@@ -5,6 +5,7 @@
        <!-- Open Content -->
     <section class="bg-light">
         <div class="container pb-5">
+            
             <div class="row">
                 <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
                 <div class="col-lg-5 mt-5">
@@ -15,7 +16,9 @@
                 </div>
                 <!-- col end -->
                 <div class="col-lg-7 mt-5">
+                    
                     <div class="card">
+                        
                         <div class="card-body">
                             <asp:Label ID="HiddenProductID" class="d-none" runat="server" Text="Label"></asp:Label>
                             <asp:Label ID="HiddenProductCategory" class="d-none" runat="server" Text="Label"></asp:Label>
@@ -44,7 +47,7 @@
                             </ul>
 
                             
-                            <form id="form1" runat="server">
+                           <form id="form1" runat="server">
                                 <input type="hidden" name="product-title" value="Activewear">
                                 <div class="row">
                                     <div class="col-auto">
@@ -97,7 +100,7 @@
                                     <div class="col d-grid">                                        
                                     </div>
                                 </div>
-                            </form>
+                           </form>
 
                         </div>
                         <!-- comment section -->
@@ -106,21 +109,7 @@
                     
                 </div>
             </div>
-            <div class="card">
-             <div class="card-body">
-                  <h5 class="card-title">Reviews</h5>
-             </div>
-                <ul class="list-group list-group-flush">
-                    <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
-                     <%--
-                          <li class="list-group-item">Cras justo odio</li>
-                          <li class="list-group-item">Dapibus ac facilisis in</li>
-                          <li class="list-group-item">Vestibulum at eros</li>
-                      --%>
-                    
-                    
-                </ul>
-            </div>
+            
         </div>
     </section>
     <!-- Close Content -->

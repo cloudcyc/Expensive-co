@@ -5,6 +5,7 @@
        <!-- Open Content -->
     <section class="bg-light">
         <div class="container pb-5">
+            <form id="form1" runat="server">
             <div class="row">
                 <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
                 <div class="col-lg-5 mt-5">
@@ -44,7 +45,7 @@
                             </ul>
 
                             
-                            <form id="form1" runat="server">
+                            <%--asdasdas--%>
                                 <input type="hidden" name="product-title" value="Activewear">
                                 <div class="row">
                                     <div class="col-auto">
@@ -97,7 +98,7 @@
                                     <div class="col d-grid">                                        
                                     </div>
                                 </div>
-                            </form>
+                            <%--asdasd--%>
 
                         </div>
                         <!-- comment section -->
@@ -117,10 +118,28 @@
                           <li class="list-group-item">Dapibus ac facilisis in</li>
                           <li class="list-group-item">Vestibulum at eros</li>
                       --%>
+                    <asp:Panel ID="Panel1" runat="server" Visible="False">
+                        <li id="commentLi" class="list-group-item">
+                            <div class="row">
+                                <div class="mb-12">
+                                    <asp:TextBox ID="commentTextArea" runat="server" TextMode="MultiLine" class="form-control mt-1" col="20" rows="2"></asp:TextBox>
+                                    <%--<textarea id="commentTextArea" class="form-control mt-1" col="20" rows="2"></textarea>--%>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-12 text-end">
+                                    <asp:Button ID="SubmitComment" runat="server" class="btn btn-primary btn-lg" Text="Comment" OnClick="SubmitComment_Click" />
+                                    <%--<a href="#" class="btn btn-primary btn-lg">Comment</a>--%>
+                                </div>
+                            </div>
+                        </li>
+                    </asp:Panel>
+                    
                     
                     
                 </ul>
             </div>
+        </form>
         </div>
     </section>
     <!-- Close Content -->

@@ -51,7 +51,7 @@ namespace Expensive_co.Development
                 if (Session["userID"] != null)
                 {
                     SqlCommand SelectedProductBroughtCommand = new SqlCommand("SELECT* FROM Carts WHERE productID = " + product_ID + " AND userID = " + Session["userID"] + " AND cartStatus = 'Checked Out'", connect);
-                    SqlDataAdapter SelectedProductBroughtAdapter = new SqlDataAdapter(SelectedProductReviewCommand);
+                    SqlDataAdapter SelectedProductBroughtAdapter = new SqlDataAdapter(SelectedProductBroughtCommand);
                     
 
                     SelectedProductBroughtAdapter.Fill(SelectedProductBroughtDT);
@@ -137,18 +137,19 @@ namespace Expensive_co.Development
                     }
                     else if (SelectedProductBroughtDT.Rows.Count > 0)
                     {
-                        html.Append("<li id=\"commentLi\" class=\"list-group-item\">");
-                        html.Append("<div class=\"row\">");
-                        html.Append("<div class=\"mb-12\">");
-                        html.Append("<textarea id=\"commentTextArea\" class=\"form-control mt-1\" col=\"20\" rows=\"2\"></textarea>");
-                        html.Append("</div>");
-                        html.Append("</div>");
-                        html.Append("<div class=\"row\">");
-                        html.Append("<div class=\"mb-12 text-end\">");
-                        html.Append("<a href=\"#\" class=\"btn btn-primary btn-lg\">Comment</a>");
-                        html.Append("</div>");
-                        html.Append("</div>");
-                        html.Append("</li>");
+                        this.Panel1.Visible = true;
+                        //html.Append("<li id=\"commentLi\" class=\"list-group-item\">");
+                        //html.Append("<div class=\"row\">");
+                        //html.Append("<div class=\"mb-12\">");
+                        //html.Append("<textarea id=\"commentTextArea\" class=\"form-control mt-1\" col=\"20\" rows=\"2\"></textarea>");
+                        //html.Append("</div>");
+                        //html.Append("</div>");
+                        //html.Append("<div class=\"row\">");
+                        //html.Append("<div class=\"mb-12 text-end\">");
+                        //html.Append("<a href=\"#\" class=\"btn btn-primary btn-lg\">Comment</a>");
+                        //html.Append("</div>");
+                        //html.Append("</div>");
+                        //html.Append("</li>");
                         
                     }
                     PlaceHolder2.Controls.Add(new Literal { Text = html.ToString() });
@@ -167,8 +168,12 @@ namespace Expensive_co.Development
                         html.Append("<p>Buy it and be the first one to review.</p>");
                         html.Append("</li>");
                     }
+                    else if (SelectedProductBroughtDT.Rows.Count > 0)
+                    {
+                        this.Panel1.Visible = true;
+                    }
 
-                    PlaceHolder2.Controls.Add(new Literal { Text = html.ToString() });
+                        PlaceHolder2.Controls.Add(new Literal { Text = html.ToString() });
                 }
                     
                     
@@ -288,6 +293,29 @@ namespace Expensive_co.Development
             
             this.QuantityNumber.Text = Convert.ToString(ResultAfterAdd);
             
+        }
+
+        protected void SubmitComment_Click(object sender, EventArgs e)
+        {
+            string comment = this.commentTextArea.Text;
+            String AddCommentQuery = null;
+            if (this.commentTextArea.Text == "")
+            {
+                Response.Write("<script>alert('Please write your comment.');</script>");
+            }else
+            {
+                DateTime currentTime = DateTime.Now;
+                AddCommentQuery = "INSERT INTO CommentsTable (commentDesc, commentDate, productID, userID) VALUES (@commentDesc,@commentDate,@productID,@userID)";
+                SqlCommand AddCommentCommand = new SqlCommand(AddCommentQuery, connect);
+                AddCommentCommand.Parameters.AddWithValue("@commentDesc", this.commentTextArea.Text);
+                AddCommentCommand.Parameters.AddWithValue("@commentDate", currentTime.ToString("yyyy-MM-dd hh:mm tt"));
+                AddCommentCommand.Parameters.AddWithValue("@productID", Convert.ToInt32(Request.QueryString["productID"]));
+                AddCommentCommand.Parameters.AddWithValue("@userID", Session["userID"]);
+                connect.Open();
+                AddCommentCommand.ExecuteNonQuery();
+                connect.Close();
+                Response.Redirect(Request.RawUrl);
+            }
         }
     }
 }
